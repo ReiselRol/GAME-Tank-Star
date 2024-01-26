@@ -9,4 +9,7 @@ switch (GunID) {
 	case 5 : return 16 // Bucky
 	case 6 : return 80 // Stinger
 	case 7 : return 15 // Sonical
+	case 8 : return 14 * 4 // Guardian
+	case 9 : return 18 * 4 // Vandal
+	case 10 : return 300 // Odin
 }

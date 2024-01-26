@@ -11,6 +11,7 @@
         "80fc8b8f-c783-4507-8074-cbe2250f6161",
         "05a156a8-c4b2-405b-b876-fdbfb90cb87b",
         "cdbd269f-079c-4a2c-861f-159b90b26d75",
+        "fc76306b-f544-41f8-aa7e-223f2311fd92",
         "220b4295-6720-43ec-af05-2f646bf1b269"
     ],
     "filterType": "GMSound",

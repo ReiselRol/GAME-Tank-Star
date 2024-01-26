@@ -9,6 +9,15 @@ with (Tank_WalkingHitbox) {
 		}
 		tank.Tank_Hsp = 0
 	}
+	if ( place_meeting(x + tank.Tank_Hsp , y , HitboxTileNoShadows))
+	{
+		while (abs(tank.Tank_Hsp) > 0.1)
+		{
+			tank.Tank_Hsp *= 0.5
+			if (!place_meeting( x + tank.Tank_Hsp , y , HitboxTileNoShadows)) x += tank.Tank_Hsp
+		}
+		tank.Tank_Hsp = 0
+	}
 	if (place_meeting(x + tank.Tank_Hsp , y , HitboxDoor))
 	{
 		while (abs(tank.Tank_Hsp) > 0.1)
@@ -25,6 +34,15 @@ with (Tank_WalkingHitbox) {
 		{
 			tank.Tank_Vsp *= 0.5
 			if ((!place_meeting(x, y + tank.Tank_Vsp, HitboxTile))) y += tank.Tank_Vsp
+		} 
+		tank.Tank_Vsp = 0
+	}
+	if ( (place_meeting(x , y + tank.Tank_Vsp , HitboxTileNoShadows)))
+	{
+		while ( abs(tank.Tank_Vsp) > 0.1)
+		{
+			tank.Tank_Vsp *= 0.5
+			if ((!place_meeting(x, y + tank.Tank_Vsp, HitboxTileNoShadows))) y += tank.Tank_Vsp
 		} 
 		tank.Tank_Vsp = 0
 	}

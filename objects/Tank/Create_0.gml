@@ -2,7 +2,6 @@
 
 // Load up
 
-
 var VTank_PrimaryColor = c_blue
 var VTank_SecondaryColor = c_dkgray
 var VTank_GunPrimaryColor = VTank_PrimaryColor
@@ -11,7 +10,7 @@ var VTank_GunSecondaryColor = VTank_SecondaryColor
 var VTank_GunPrimaryColor2 = VTank_PrimaryColor
 var VTank_GunSecondaryColor2 = VTank_SecondaryColor
 
-var VTank_GunID = 0
+var VTank_GunID = irandom(10)
 var VTank_SkinCannonPaint = 0
 var VTank_CannonSkin = 0
 
@@ -25,13 +24,14 @@ var VTank_PlayerID = global.ActualID
 
 var VTank_SkinCartPaint = 0
 var Alive = true
+var VTank_Money = 800
 
 if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 	ds_list_add(global.Match_Players, [VTank_PrimaryColor, VTank_SecondaryColor, VTank_GunPrimaryColor,
 									   VTank_GunSecondaryColor, VTank_GunPrimaryColor2, VTank_GunSecondaryColor2,
 									   VTank_GunID, VTank_SkinCannonPaint, VTank_CannonSkin,
 									   VTank_GunID2, VTank_SkinSecondaryCannonPaint, VTank_CannonSecondarySkin,
-									   VTank_Shield, VTank_Name, VTank_PlayerID, VTank_SkinCartPaint, Alive])
+									   VTank_Shield, VTank_Name, VTank_PlayerID, VTank_SkinCartPaint, Alive, VTank_Money])
 } else {
 	
 	var Tank_Info = ds_list_find_value(global.Match_Players, global.ActualID)
@@ -58,6 +58,7 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 		VTank_Name = Tank_Info[13]
 		VTank_PlayerID = Tank_Info[14]
 		VTank_SkinCartPaint = Tank_Info[15]
+		VTank_Money = Tank_Info[17]
 		
 	} else {
 		
@@ -71,6 +72,7 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 		
 		VTank_Name = Tank_Info[13]
 		VTank_PlayerID = Tank_Info[14]
+		VTank_Money = Tank_Info[17]
 		
 	}	
 	
@@ -84,6 +86,7 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 
 // General Props
 
+Tank_Money = VTank_Money
 Tank_PlayerID = VTank_PlayerID
 Tank_RespectTankColors = false
 Tank_CanShowKillUI = true
@@ -205,3 +208,4 @@ image_alpha = 1
 image_xscale = Tank_Scale
 image_yscale = Tank_Scale
 event_user(0)
+Tank_FixWeaponSelection()

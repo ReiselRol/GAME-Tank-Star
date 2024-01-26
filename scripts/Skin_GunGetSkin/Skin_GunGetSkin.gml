@@ -9,4 +9,7 @@ switch (GunID) {
 	case 5 : return Skin_BuckySkins(SkinID)
 	case 6 : return Skin_StingerSkins(SkinID)
 	case 7 : return Skin_SonicalSkins(SkinID)
+	case 8 : return Skin_GuardianSkins(SkinID)
+	case 9 : return Skin_VandalSkins(SkinID)
+	case 10 : return Skin_OdinSkins(SkinID)
 }

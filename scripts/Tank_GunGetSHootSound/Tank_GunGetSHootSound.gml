@@ -9,4 +9,7 @@ switch (GunID) {
 	case 5 : return BuckyShoot // Bucky
 	case 6 : return FrenzyShoot // Stinger
 	case 7 : return SonicalShoot // Sonical
+	case 8 : return GuardianShoot // Guardian
+	case 9 : return FrenzyShoot // Vandal
+	case 10 : return FrenzyShoot // Odin
 }

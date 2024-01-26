@@ -8,7 +8,7 @@ else global.BotsCustomized = (global.BotsCustomized == -2) ? false : true
 if (variable_global_exists("Match_Players") == false) global.Match_Players = ds_list_create()
 randomise()
 Match_MakeGrid()
-Match_TotalMatchs = 2
+Match_TotalMatchs = 5
 Match_FirtsPositionSet = false
 Match_IsShopTime = true
 Match_ShopTime = 6 * 60

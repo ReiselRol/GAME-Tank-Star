@@ -4,5 +4,7 @@ switch (GunID) {
 	case 4 : return 15 // Marshal
 	case 5 : return 2 // Bucky
 	case 7 : return 25 // Sonical
+	case 8 : return 6 // Guardian
+	case 9 : return 4 // Vandal
 	default : return 3
 }

@@ -6,6 +6,7 @@ if (Tank_WeaponSelected == 1) {
 	Tank_GunProj = Tank_GunGetProj(Tank_GunID)
 	Tank_GunShootSound = Tank_GunGetSHootSound(Tank_GunID)
 	AudioPlaySound(Tank_GunGetReloadSound(Tank_GunID))
+	Tank_FixWeaponSelection()
 } else {
 	Tank_GunDamage = Tank_GunGetDamage(Tank_GunID2)
 	Tank_GunAutoReuse = Tank_GunGetAutoReuse(Tank_GunID2)
@@ -14,4 +15,5 @@ if (Tank_WeaponSelected == 1) {
 	Tank_GunProj = Tank_GunGetProj(Tank_GunID2)
 	Tank_GunShootSound = Tank_GunGetSHootSound(Tank_GunID2)
 	AudioPlaySound(Tank_GunGetReloadSound(Tank_GunID2))
+	Tank_FixWeaponSelection()
 }

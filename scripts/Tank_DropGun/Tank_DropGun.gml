@@ -34,4 +34,5 @@ if ((Tank_WeaponSelected == 1 && Tank_GunID > -1) || (Tank_WeaponSelected == 2 &
 	}
 	Tank_DropCooldown = Tank_MaxDropCooldown
 	AudioPlaySound(GunDropSound)
+	Tank_FixWeaponSelection()
 }

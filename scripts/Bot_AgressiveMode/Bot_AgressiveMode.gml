@@ -1,6 +1,7 @@
 path_end()
 Tank_BotEnemie_LastX = Tank_BotEnemie.x
 Tank_BotEnemie_LastY = Tank_BotEnemie.y
+Tank_BotTimeWaiting = irandom(60 * 5) + 10
 Tank_PointingTo = point_direction(x, y, Tank_BotEnemie.x, Tank_BotEnemie.y)
 if (Tank_JumpScareAwaitTime > 0) Tank_JumpScareAwaitTime--
 else {
