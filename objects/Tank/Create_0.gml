@@ -10,9 +10,9 @@ var VTank_GunSecondaryColor = VTank_SecondaryColor
 var VTank_GunPrimaryColor2 = VTank_PrimaryColor
 var VTank_GunSecondaryColor2 = VTank_SecondaryColor
 
-var VTank_GunID = irandom(10)
-var VTank_SkinCannonPaint = 0
-var VTank_CannonSkin = 0
+var VTank_GunID = irandom(11)
+var VTank_SkinCannonPaint = Item_GetPainted()
+var VTank_CannonSkin = irandom(1)
 
 var VTank_GunID2 = -1
 var VTank_SkinSecondaryCannonPaint = 0

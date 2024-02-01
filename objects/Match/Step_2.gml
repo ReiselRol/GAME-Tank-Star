@@ -4,7 +4,7 @@ if (Match_IsShopTime) Match_ShopTime --
 else if (Match_FirtsPositionSet == false) {
 	Match_FirtsPositionSet = true
 	if (Match_SpikeMatch == true) {
-		var defenderTeam = Match_DefendingTeam
+		var defenderTeam = global.Defenders
 		var zoneToDefend = irandom(2)
 		with (BotTank) {
 			if (Tank_Team = defenderTeam) {

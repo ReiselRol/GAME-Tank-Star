@@ -2,8 +2,9 @@ var elo = argument[0]
 var nextZone = irandom(2)
 var teamMates = Match_TotalPlayersOnTeam
 var reducer = (Match_PlayerPlay == true) ? 0 : 1
+Match_ChooseDefendingTeam()
 global.ActualID = 0
-if (Match_DefendingTeam == 0) {
+if (global.Defenders == 0) {
 	if (Match_PlayerPlay == true) var tank = instance_create_layer(HitboxZone1.x - Match_Distance * 2, HitboxZone1.y, "TankHitboxLayer", Tank)
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
 		global.ActualID ++

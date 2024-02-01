@@ -12,4 +12,5 @@ switch (GunID) {
 	case 8 : return Skin_GuardianSkins(SkinID)
 	case 9 : return Skin_VandalSkins(SkinID)
 	case 10 : return Skin_OdinSkins(SkinID)
+	case 11 : return Skin_JudgeSkins(SkinID)
 }

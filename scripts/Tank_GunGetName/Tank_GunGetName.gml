@@ -12,4 +12,5 @@ switch (GunID) {
 	case 8 : return "Guardian"
 	case 9 : return "Vandal"
 	case 10 : return "Odin"
+	case 11 : return "Judge"
 }

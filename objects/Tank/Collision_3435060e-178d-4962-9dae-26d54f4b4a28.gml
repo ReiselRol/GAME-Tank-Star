@@ -1,6 +1,7 @@
 /// @description Take The Damage
 if (other.Damage_Cooldown <= 0) {
 	if (other.Damage_Team != Tank_Team) {
+		other.Damage_Piercing --
 		other.Damage_Cooldown = other.Damage_MaxCooldown
 		if (Tank_Shield <= 0) {
 			Tank_Health -= other.Damage_Damage
@@ -19,7 +20,6 @@ if (other.Damage_Cooldown <= 0) {
 		}
 		if (Tank_Health > 0) {
 			Tank_HittedTime = 1
-			other.Damage_Piercing --
 			if (Tank_IsABot) {
 				if (instance_exists(other.Damage_From)) {
 					Tank_BotEnemie_LastX = other.Damage_From.x
@@ -49,5 +49,6 @@ if (other.Damage_Cooldown <= 0) {
 				audio_sound_pitch(sound, 1 + 0.15 * (kills - 2))
 			}
 		}
+		if (other.Damage_Piercing == 0) instance_destroy(other)
 	}
 }

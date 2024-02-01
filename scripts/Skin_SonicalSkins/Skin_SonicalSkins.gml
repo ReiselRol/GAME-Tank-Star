@@ -1,6 +1,6 @@
 var SkinID = argument[0]
 var returnValue = ds_list_create()
 switch (SkinID) {
-	default : ds_list_add(returnValue, SonicalG0, SonicalP0, SonicalC0, SonicalPr0, SonicalS0)
+	default : ds_list_add(returnValue, SonicalG0, SonicalP0, SonicalC0, SonicalPr0, SonicalS0, c_gray, c_dkgray)
 }
 return returnValue

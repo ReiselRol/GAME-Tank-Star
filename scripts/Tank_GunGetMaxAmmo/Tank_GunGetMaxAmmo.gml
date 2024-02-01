@@ -12,4 +12,5 @@ switch (GunID) {
 	case 8 : return 14 * 4 // Guardian
 	case 9 : return 18 * 4 // Vandal
 	case 10 : return 300 // Odin
+	case 11 : return 20 // Judge
 }

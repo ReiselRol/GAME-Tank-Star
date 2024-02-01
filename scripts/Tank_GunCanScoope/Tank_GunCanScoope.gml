@@ -12,4 +12,5 @@ switch (GunID) {
 	case 8 : return true // Guardian
 	case 9 : return true // Vandal
 	case 10 : return true // Odin
+	case 11 : return true // Judge
 }

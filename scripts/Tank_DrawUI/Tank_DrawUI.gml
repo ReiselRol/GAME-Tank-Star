@@ -67,5 +67,36 @@ if (Camera_Main == true) {
 			draw_set_color(c_white)
 		}
 		draw_set_font(DefaultFont)
+		var blueTeam = 0
+		var redTeam = 0
+		var infoUIX = cameraWIdth / 2 + camera_get_view_x(view_camera[0])
+		var infoUIY = camera_get_view_y(view_camera[0]) + 30 * scaleFix
+		var InfoXscale = 0.65 * scaleFix
+		var InfoYscale = 0.25 * scaleFix
+		var InfoAlpha = 0.5
+		var InfoTankDistance = 50 * scaleFix
+		var InfoTankMargin = 100 * scaleFix
+		var InfoTankScale = 0.75 * scaleFix
+		var InfoTankAlpha = 1
+		draw_sprite_ext(TimebarSprite, 1, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_aqua, InfoAlpha)
+		draw_sprite_ext(TimebarSprite, 2, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_red, InfoAlpha)
+		draw_sprite_ext(TimebarSprite, 0, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_white, 1)
+		with (Tank) {
+			if (Tank_Team == 0) {
+				blueTeam ++
+				var tankXPos = infoUIX - (InfoTankMargin + InfoTankDistance * blueTeam)
+				draw_sprite_ext(Tank_SkinWheel, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 0, c_white, InfoTankAlpha)
+				draw_sprite_ext(Tank_SkinCartPrimary, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 0, Tank_PrimaryColor, InfoTankAlpha)
+				draw_sprite_ext(Tank_SkinCartSecondary, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 0, Tank_SecondaryColor, InfoTankAlpha)
+				draw_sprite_ext(Tank_SkinCartChasis, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 0, c_white, InfoTankAlpha)
+			} else {
+				redTeam ++
+				var tankXPos = infoUIX + (InfoTankMargin + InfoTankDistance * redTeam)
+				draw_sprite_ext(Tank_SkinWheel, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 180, c_white, InfoTankAlpha)
+				draw_sprite_ext(Tank_SkinCartPrimary, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 180, Tank_PrimaryColor, InfoTankAlpha)
+				draw_sprite_ext(Tank_SkinCartSecondary, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 180, Tank_SecondaryColor, InfoTankAlpha)
+				draw_sprite_ext(Tank_SkinCartChasis, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 180, c_white, InfoTankAlpha)
+			}
+		}
 	}
 }
