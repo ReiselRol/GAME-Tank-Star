@@ -1,5 +1,6 @@
 var GunID = argument[0]
-
+if (Tank_WeaponSelected == 1 && Tank_GunID > -1 && Tank_ScopeID > -1) return true
+else if (Tank_WeaponSelected == 2 && Tank_GunID2 > -1 && Tank_ScopeID2 > -1) return true
 switch (GunID) {
 	case 0 : return false // classic
 	case 1 : return false // Shorty

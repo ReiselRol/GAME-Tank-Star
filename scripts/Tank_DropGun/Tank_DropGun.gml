@@ -17,7 +17,15 @@ if ((Tank_WeaponSelected == 1 && Tank_GunID > -1) || (Tank_WeaponSelected == 2 &
 		newGun.Gun_SkinCannonGlow = Tank_SkinCannonGlow
 		newGun.Gun_PrimaryColor = Tank_GunPrimaryColor
 		newGun.Gun_SecondaryColor = Tank_GunSecondaryColor
+		newGun.Gun_CannonSkin = Tank_CannonSkin
+		
+		newGun.Gun_ScopeID = Tank_ScopeID
+		newGun.Gun_ScopeChasis = Tank_SkinScopeChasis
+		newGun.Gun_ScopeColor = Tank_SkinScopeColor
+		newGun.Gun_ScopePainted = Tank_SkinScopePainted
+		newGun.Gun_ScopeGlow = Tank_SkinScopeGlow
 		Tank_GunID = -1
+		Tank_ScopeID = -1
 	} else {
 		newGun.Gun_Ammo = Tank_GunAmmo2
 		newGun.Gun_ID = Tank_GunID2
@@ -30,7 +38,15 @@ if ((Tank_WeaponSelected == 1 && Tank_GunID > -1) || (Tank_WeaponSelected == 2 &
 		newGun.Gun_SkinCannonGlow = Tank_SkinSecondaryCannonGlow
 		newGun.Gun_PrimaryColor = Tank_GunPrimaryColor2
 		newGun.Gun_SecondaryColor = Tank_GunSecondaryColor2
+		newGun.Gun_CannonSkin = Tank_CannonSecondarySkin
+		
+		newGun.Gun_ScopeID = Tank_ScopeID2
+		newGun.Gun_ScopeChasis = Tank_SkinScopeChasis2
+		newGun.Gun_ScopeColor = Tank_SkinScopeColor2
+		newGun.Gun_ScopePainted = Tank_SkinScopePainted2
+		newGun.Gun_ScopeGlow = Tank_SkinScopeGlow2
 		Tank_GunID2 = -1
+		Tank_ScopeID2 = -1
 	}
 	Tank_DropCooldown = Tank_MaxDropCooldown
 	AudioPlaySound(GunDropSound)

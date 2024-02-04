@@ -25,7 +25,10 @@ with (Tank) {
 if (finished == true) MatchFinishCooldown --
 if (MatchFinishCooldown <= 0) {
 	Match_updateTankInfo()
-	if (team > -1)global.Wins[team] += 1
+	if (team > -1) { 
+		global.Wins[team] += 1
+		global.WinnedTeam = team
+	}
 	if ( global.Wins[0] == Match_TotalMatchs || global.Wins[1] == Match_TotalMatchs) Match_prepareMatch()
 	room_restart()
 }

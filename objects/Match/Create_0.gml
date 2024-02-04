@@ -1,6 +1,7 @@
 /// @description Grid time
 global.LDM = false
 global.ActualID = 0
+if (variable_global_exists("WinnedTeam") == false) global.WinnedTeam = -1
 if (variable_global_exists("Wins") == false)  global.Wins = [0,0]
 if (variable_global_exists("BotsCustomized") == false ) global.BotsCustomized = false
 else global.BotsCustomized = (global.BotsCustomized == -2) ? false : true
@@ -13,7 +14,7 @@ Match_TotalMatchs = 5
 Match_FirtsPositionSet = false
 Match_IsShopTime = true
 Match_ShopTime = 6 * 60
-Match_elo = 0
+Match_elo = 1650
 MatchFinishCooldown = 3 * 60
 Match_PlayerPlay = true
 Match_TotalPlayersOnTeam = 5

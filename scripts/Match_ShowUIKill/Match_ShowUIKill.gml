@@ -31,6 +31,12 @@ if (killed.Tank_CanShowKillUI == true){
 		UIKill.Tank2_SkinCannonSecondary = killed.Tank_SkinCannonSecondary
 		UIKill.Tank2_GunPrimaryColor = killed.Tank_GunPrimaryColor
 		UIKill.Tank2_GunSecondaryColor = killed.Tank_GunSecondaryColor
+		
+		UIKill.Tank2_ScopeID = killed.Tank_ScopeID
+		UIKill.Tank2_SkinScopeChasis = killed.Tank_SkinScopeChasis
+		UIKill.Tank2_SkinScopeColor = killed.Tank_SkinScopeColor
+		UIKill.Tank2_SkinScopeGlow = killed.Tank_SkinScopeGlow
+		UIKill.Tank2_SkinScopePainted = killed.Tank_SkinScopePainted
 	} else {
 		UIKill.Tank2_SkinCannonGlow = killed.Tank_SkinSecondaryCannonGlow
 		UIKill.Tank2_SkinCannonPainted = killed.Tank_SkinSecondaryCannonPainted
@@ -40,6 +46,12 @@ if (killed.Tank_CanShowKillUI == true){
 		UIKill.Tank2_SkinCannonSecondary = killed.Tank_SkinSecondaryCannonSecondary
 		UIKill.Tank2_GunPrimaryColor = killed.Tank_GunPrimaryColor2
 		UIKill.Tank2_GunSecondaryColor = killed.Tank_GunSecondaryColor2
+		
+		UIKill.Tank2_ScopeID = killed.Tank_ScopeID2
+		UIKill.Tank2_SkinScopeChasis = killed.Tank_SkinScopeChasis2
+		UIKill.Tank2_SkinScopeColor = killed.Tank_SkinScopeColor2
+		UIKill.Tank2_SkinScopeGlow = killed.Tank_SkinScopeGlow2
+		UIKill.Tank2_SkinScopePainted = killed.Tank_SkinScopePainted2
 	}
 
 	if (UIKill.KillInfo_FromExist == true) {
@@ -61,5 +73,11 @@ if (killed.Tank_CanShowKillUI == true){
 		UIKill.Tank_SkinCannonSecondary = killer.Tank_SkinCannonSecondary
 		UIKill.Tank_GunPrimaryColor = killer.Tank_GunPrimaryColor
 		UIKill.Tank_GunSecondaryColor = killer.Tank_GunSecondaryColor
+		
+		UIKill.Tank_ScopeID = killer.Tank_ScopeID
+		UIKill.Tank_SkinScopeChasis = killer.Tank_SkinScopeChasis
+		UIKill.Tank_SkinScopeColor = killer.Tank_SkinScopeColor
+		UIKill.Tank_SkinScopeGlow = killer.Tank_SkinScopeGlow
+		UIKill.Tank_SkinScopePainted = killer.Tank_SkinScopePainted
 	}
 }

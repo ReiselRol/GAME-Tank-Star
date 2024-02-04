@@ -31,6 +31,12 @@ if (From.Tank_WeaponSelected == 1) {
 	hitLetal.Tank_SkinCannonSecondary = From.Tank_SkinCannonSecondary
 	hitLetal.Tank_GunPrimaryColor = From.Tank_GunPrimaryColor
 	hitLetal.Tank_GunSecondaryColor = From.Tank_GunSecondaryColor
+	
+	hitLetal.Tank_ScopeID = Tank_ScopeID
+	hitLetal.Tank_SkinScopeChasis = Tank_SkinScopeChasis
+	hitLetal.Tank_SkinScopeColor = Tank_SkinScopeColor
+	hitLetal.Tank_SkinScopeGlow = Tank_SkinScopeGlow
+	hitLetal.Tank_SkinScopePainted = Tank_SkinScopePainted
 } else {
 	hitLetal.KillInfo_KillerGun = From.Tank_GunID2
 	hitLetal.Tank_SkinCannonGlow = From.Tank_SkinSecondaryCannonGlow
@@ -41,6 +47,12 @@ if (From.Tank_WeaponSelected == 1) {
 	hitLetal.Tank_SkinCannonSecondary = From.Tank_SkinSecondaryCannonSecondary
 	hitLetal.Tank_GunPrimaryColor = From.Tank_GunPrimaryColor2
 	hitLetal.Tank_GunSecondaryColor = From.Tank_GunSecondaryColor2
+	
+	hitLetal.Tank_ScopeID = Tank_ScopeID2
+	hitLetal.Tank_SkinScopeChasis = Tank_SkinScopeChasis2
+	hitLetal.Tank_SkinScopeColor = Tank_SkinScopeColor2
+	hitLetal.Tank_SkinScopeGlow = Tank_SkinScopeGlow2
+	hitLetal.Tank_SkinScopePainted = Tank_SkinScopePainted2
 }
 hitLetal.image_xscale = ToFollow.image_xscale
 hitLetal.image_yscale = ToFollow.image_yscale

@@ -12,7 +12,7 @@ var VTank_GunSecondaryColor2 = VTank_SecondaryColor
 
 var VTank_GunID = irandom(11)
 var VTank_SkinCannonPaint = Item_GetPainted()
-var VTank_CannonSkin = irandom(1)
+var VTank_CannonSkin = irandom(2)
 
 var VTank_GunID2 = -1
 var VTank_SkinSecondaryCannonPaint = 0
@@ -26,12 +26,22 @@ var VTank_SkinCartPaint = 0
 var Alive = true
 var VTank_Money = 800
 
+var VTank_ScopeID = (irandom(5) == 0) ? irandom(2) : -1
+var VTank_ScopeID2 = -1
+
+//
+
+if (Tank_GunGetLevel(VTank_GunID) == 2 && VTank_ScopeID > 1) VTank_ScopeID = 1
+else if (Tank_GunGetLevel(VTank_GunID) == 3 && VTank_ScopeID > 0) VTank_ScopeID = 0
+
+//
 if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 	ds_list_add(global.Match_Players, [VTank_PrimaryColor, VTank_SecondaryColor, VTank_GunPrimaryColor,
 									   VTank_GunSecondaryColor, VTank_GunPrimaryColor2, VTank_GunSecondaryColor2,
 									   VTank_GunID, VTank_SkinCannonPaint, VTank_CannonSkin,
 									   VTank_GunID2, VTank_SkinSecondaryCannonPaint, VTank_CannonSecondarySkin,
-									   VTank_Shield, VTank_Name, VTank_PlayerID, VTank_SkinCartPaint, Alive, VTank_Money])
+									   VTank_Shield, VTank_Name, VTank_PlayerID, VTank_SkinCartPaint, Alive, VTank_Money,
+									   VTank_ScopeID, VTank_ScopeID2])
 } else {
 	
 	var Tank_Info = ds_list_find_value(global.Match_Players, global.ActualID)
@@ -60,6 +70,9 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 		VTank_SkinCartPaint = Tank_Info[15]
 		VTank_Money = Tank_Info[17]
 		
+		VTank_ScopeID = Tank_Info[18]
+		VTank_ScopeID2 = Tank_Info[19]
+		
 	} else {
 		
 		VTank_PrimaryColor = Tank_Info[0]
@@ -77,7 +90,6 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 	}	
 	
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                   ///
 ///                                       P R O P E R T I E S                                         ///
@@ -107,11 +119,13 @@ Tank_MaxDropCooldown = 60
 Tank_GunID = VTank_GunID  //Gun 1
 Tank_SkinCannonPaint = VTank_SkinCannonPaint
 Tank_CannonSkin = VTank_CannonSkin
-
+Tank_ScopeID = VTank_ScopeID
+Skin_SetPrimaryScopeSkin(VTank_ScopeID)
 Tank_GunID2 = VTank_GunID2 //Gun 2
 Tank_SkinSecondaryCannonPaint = VTank_SkinSecondaryCannonPaint
 Tank_CannonSecondarySkin = VTank_CannonSecondarySkin
-
+Tank_ScopeID2 = VTank_ScopeID2
+Skin_SetSecondaryScopeSkin(VTank_ScopeID2)
 Tank_CartSkin = 0
 Tank_SkinCartPaint = VTank_SkinCartPaint
 

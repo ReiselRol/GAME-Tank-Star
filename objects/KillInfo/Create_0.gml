@@ -33,6 +33,11 @@ Tank_SkinCannonPrimary = 0
 Tank_SkinCannonSecondary = 0
 Tank_GunPrimaryColor = 0
 Tank_GunSecondaryColor = 0
+Tank_ScopeID = 0
+Tank_SkinScopeChasis = 0
+Tank_SkinScopeColor = 0
+Tank_SkinScopeGlow = 0
+Tank_SkinScopePainted = 0
 
 Tank2_PrimaryColor = 0
 Tank2_SecondaryColor = 0
@@ -52,6 +57,11 @@ Tank2_SkinCannonPrimary = 0
 Tank2_SkinCannonSecondary = 0
 Tank2_GunPrimaryColor = 0
 Tank2_GunSecondaryColor = 0
+Tank2_ScopeID = 0
+Tank2_SkinScopeChasis = 0
+Tank2_SkinScopeColor = 0
+Tank2_SkinScopeGlow = 0
+Tank2_SkinScopePainted = 0
 
 Tank_SkinCannonGlow = 0
 Tank_SkinCannonPainted = 0

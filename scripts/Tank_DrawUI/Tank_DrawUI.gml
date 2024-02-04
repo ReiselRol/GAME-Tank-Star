@@ -22,12 +22,26 @@ if (Camera_Main == true) {
 			draw_sprite_ext(ds_list_find_value(skinparts, 4), 0, x + XW, y + YW,wScale, wScale, 0, make_color_rgb(100,100,100), colorActived * 2)
 			draw_sprite_ext(ds_list_find_value(skinparts, 3), 0, x + XW, y + YW, wScale, wScale, 0, make_color_rgb(70,70,70), colorActived * 2)
 			draw_sprite_ext(ds_list_find_value(skinparts, 2), 0, x + XW, y + YW, wScale, wScale, 0, c_white, colorActived * 2)
+			if (Camera_From.Tank_ScopeID > -1) {
+				var xDiferent = cameraWIdth * 0.045
+				var yDiferent = cameraHeight * 0.007
+				var scopeParts = Skin_GetScopeSkin(Camera_From.Tank_ScopeID)
+				draw_sprite_ext(ds_list_find_value(scopeParts, 1), 0, x + XW - xDiferent, y + YW + yDiferent,wScale, wScale, 90, make_color_rgb(70,70,70), colorActived * 2)
+				draw_sprite_ext(ds_list_find_value(scopeParts, 0), 0, x + XW - xDiferent, y + YW + yDiferent, wScale, wScale, 90, c_white, colorActived * 2)
+			}
 		}
 		if (Camera_From.Tank_GunID2 != -1) {
 			var skinparts2 = Skin_GunGetSkin(Camera_From.Tank_GunID2, 0)
 			draw_sprite_ext(ds_list_find_value(skinparts2, 4), 0, x + XW, y + Y2W, wScale, wScale, 0, make_color_rgb(100,100,100), colorActived2 * 2)
 			draw_sprite_ext(ds_list_find_value(skinparts2, 3), 0, x + XW, y + Y2W, wScale, wScale, 0, make_color_rgb(70,70,70), colorActived2 * 2)
 			draw_sprite_ext(ds_list_find_value(skinparts2, 2), 0, x + XW, y + Y2W, wScale, wScale, 0, c_white, colorActived2 * 2)
+			if (Camera_From.Tank_ScopeID2 > -1) {
+				var xDiferent = cameraWIdth * 0.045
+				var yDiferent = cameraHeight * 0.007
+				var scopeParts = Skin_GetScopeSkin(Camera_From.Tank_ScopeID2)
+				draw_sprite_ext(ds_list_find_value(scopeParts, 1), 0, x + XW - xDiferent, y + Y2W + yDiferent, wScale, wScale, 90, make_color_rgb(70,70,70), colorActived2 * 2)
+				draw_sprite_ext(ds_list_find_value(scopeParts, 0), 0, x + XW - xDiferent, y + Y2W + yDiferent, wScale, wScale, 90, c_white, colorActived2 * 2)
+			}
 		}
 		var ammoColor = c_gray
 		var actualAmmo = 0
@@ -71,12 +85,13 @@ if (Camera_Main == true) {
 		var redTeam = 0
 		var infoUIX = cameraWIdth / 2 + camera_get_view_x(view_camera[0])
 		var infoUIY = camera_get_view_y(view_camera[0]) + 30 * scaleFix
+		var InfoTankRelativeScale = 5 / Match.Match_TotalPlayersOnTeam
 		var InfoXscale = 0.65 * scaleFix
 		var InfoYscale = 0.25 * scaleFix
 		var InfoAlpha = 0.5
-		var InfoTankDistance = 50 * scaleFix
+		var InfoTankDistance = 50 * scaleFix * InfoTankRelativeScale
 		var InfoTankMargin = 100 * scaleFix
-		var InfoTankScale = 0.75 * scaleFix
+		var InfoTankScale = 0.75 * scaleFix * InfoTankRelativeScale
 		var InfoTankAlpha = 1
 		draw_sprite_ext(TimebarSprite, 1, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_aqua, InfoAlpha)
 		draw_sprite_ext(TimebarSprite, 2, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_red, InfoAlpha)

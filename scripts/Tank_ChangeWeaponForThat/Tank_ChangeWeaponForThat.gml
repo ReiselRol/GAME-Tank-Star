@@ -18,6 +18,9 @@ if (isSmallGun == true) {
 	Tank_SkinCannonSecondary = newGun.Gun_SkinCannonSecondary
 	Tank_GunPrimaryColor = newGun.Gun_PrimaryColor
 	Tank_GunSecondaryColor = newGun.Gun_SecondaryColor
+	Tank_CannonSkin = newGun.Gun_CannonSkin
+	Tank_ScopeID = newGun.Gun_ScopeID
+	Skin_SetPrimaryScopeSkin(Tank_ScopeID)
 } else {
 	if (Tank_GunID2 > -1) {
 		Tank_WeaponSelected = 2
@@ -35,4 +38,7 @@ if (isSmallGun == true) {
 	Tank_SkinSecondaryCannonSecondary = newGun.Gun_SkinCannonSecondary
 	Tank_GunPrimaryColor2 = newGun.Gun_PrimaryColor
 	Tank_GunSecondaryColor2 = newGun.Gun_SecondaryColor
+	Tank_CannonSecondarySkin = newGun.Gun_CannonSkin
+	Tank_ScopeID2 = newGun.Gun_ScopeID
+	Skin_SetSecondaryScopeSkin(Tank_ScopeID2)
 }

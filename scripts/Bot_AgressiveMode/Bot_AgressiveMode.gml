@@ -8,7 +8,9 @@ else {
 	if ((Tank_WeaponSelected == 1 && Tank_GunMaxAmmo == 0 && Tank_GunAmmo == 0) || (Tank_WeaponSelected == 2 && Tank_GunMaxAmmo2 == 0 && Tank_GunAmmo2 == 0)) Tank_IsReloading = true
 	else{
 		if (Tank_GunCooldown <= 0 ) {
-			var badAim = irandom(15 - Tank_BotElo / 100)
+			var badAimCalculation = 15 - Tank_BotElo / 100
+			if (badAimCalculation > 1) var badAim = irandom(15 - Tank_BotElo / 100)
+			else var badAim = 0
 			if (irandom(1) == 0) badAim *= -1
 			Tank_PointingTo += badAim
 		}

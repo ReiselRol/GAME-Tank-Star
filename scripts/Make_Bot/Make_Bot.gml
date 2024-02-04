@@ -18,6 +18,8 @@ with (bottank) {
 		ds_list_replace(global.Match_Players, Tank_PlayerID, Tank_Info)
 	}
 	Tank_Team = Team
+	if (global.WinnedTeam == Team) Tank_Money += 3000
+	else if (global.WinnedTeam > -1) Tank_Money += 1350
 	Skin_SetPrimarySkin(Tank_GunID, Tank_CannonSkin)
 	Skin_SetSecondarySkin(Tank_GunID2, Tank_SecondaryColor)
 	Tank_GunAutoReuse = Tank_GunGetAutoReuse(Tank_GunID)

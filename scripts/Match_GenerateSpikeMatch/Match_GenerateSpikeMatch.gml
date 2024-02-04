@@ -5,7 +5,11 @@ var reducer = (Match_PlayerPlay == true) ? 0 : 1
 Match_ChooseDefendingTeam()
 global.ActualID = 0
 if (global.Defenders == 0) {
-	if (Match_PlayerPlay == true) var tank = instance_create_layer(HitboxZone1.x - Match_Distance * 2, HitboxZone1.y, "TankHitboxLayer", Tank)
+	if (Match_PlayerPlay == true) {
+		var tank = instance_create_layer(HitboxZone1.x - Match_Distance * 2, HitboxZone1.y, "TankHitboxLayer", Tank)
+		if (global.WinnedTeam == tank.Tank_Team) tank.Tank_Money += 3000
+		else if (global.WinnedTeam > -1) tank.Tank_Money += 1350
+	}
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
 		global.ActualID ++
 		var bot = Make_Bot( HitboxZone2.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone2.y, 1 , elo)
@@ -28,7 +32,11 @@ if (global.Defenders == 0) {
 		}
 	}
 } else {
-	if (Match_PlayerPlay == true) var tank = instance_create_layer( HitboxZone2.x - Match_Distance * 2, HitboxZone2.y, "TankHitboxLayer", Tank)
+	if (Match_PlayerPlay == true) { 
+		var tank = instance_create_layer( HitboxZone2.x - Match_Distance * 2, HitboxZone2.y, "TankHitboxLayer", Tank)
+		if (global.WinnedTeam == tank.Tank_Team) tank.Tank_Money += 3000
+		else if (global.WinnedTeam > -1) tank.Tank_Money += 1350
+	}
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
 		global.ActualID ++
 		Make_Bot(HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone1.y, 1 , elo)

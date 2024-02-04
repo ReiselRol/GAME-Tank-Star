@@ -20,7 +20,10 @@
         "51d12537-1ff0-4dae-838c-dae49435eb76",
         "f9a09be6-620c-4c4d-a592-40dd6b246f53",
         "153664b8-d821-4b04-9364-af372517b7bc",
-        "18f04f5d-3b6e-492d-8d8f-6633a2b0531b"
+        "18f04f5d-3b6e-492d-8d8f-6633a2b0531b",
+        "ab188fe0-f4e8-40c9-a11f-3a295d58213f",
+        "e27151dc-4006-4c08-992a-637930a2cd88",
+        "19cf7f45-ee8a-41fb-bd90-086016026915"
     ],
     "filterType": "GMScript",
     "folderName": "Skins",

@@ -18,11 +18,23 @@ Tank_Draw(x + XKiller*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, Kill
 			Tank_SkinCartPainted, Tank_SkinCartPaint, true, color0,
 			Tank_SkinCannonGlow, Tank_SkinCannonPainted, Tank_SkinCannonPaint,
 			Tank_SkinCannonChasis, Tank_SkinCannonPrimary, Tank_SkinCannonSecondary, KillInfo_PointingTo,
-			Tank_GunPrimaryColor, Tank_GunSecondaryColor, false, true)
+			Tank_GunPrimaryColor, Tank_GunSecondaryColor, false, true,
+			(Tank_ScopeID > -1), Tank_SkinScopeChasis, Tank_SkinScopePainted, Tank_SkinScopeGlow, Tank_SkinScopeColor)
 var skinparts = Skin_GunGetSkin(KillInfo_KillerGun, 0)
-draw_sprite_ext(ds_list_find_value(skinparts, 4), 0, x + XGun*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(100,100,100), image_alpha)
-draw_sprite_ext(ds_list_find_value(skinparts, 3), 0, x + XGun*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(70,70,70), image_alpha)
-draw_sprite_ext(ds_list_find_value(skinparts, 2), 0, x + XGun*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, c_white, image_alpha)
+	if (Tank_ScopeID > -1) {
+		var separation = 8
+		draw_sprite_ext(ds_list_find_value(skinparts, 4), 0, x + XGun*KillInfo_ScaleFixer, y + (YKiller - separation)*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(100,100,100), image_alpha)
+		draw_sprite_ext(ds_list_find_value(skinparts, 3), 0, x + XGun*KillInfo_ScaleFixer, y + (YKiller - separation)*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(70,70,70), image_alpha)
+		draw_sprite_ext(ds_list_find_value(skinparts, 2), 0, x + XGun*KillInfo_ScaleFixer, y + (YKiller - separation)*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, c_white, image_alpha)
+		
+		draw_sprite_ext(Tank_SkinScopeColor, 0, x + XGun*KillInfo_ScaleFixer, y + (YKiller + separation)*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(100,100,100), image_alpha)
+		draw_sprite_ext(Tank_SkinScopeChasis, 0, x + XGun*KillInfo_ScaleFixer, y + (YKiller + separation)*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, c_white, image_alpha)		
+	}
+	else {
+		draw_sprite_ext(ds_list_find_value(skinparts, 4), 0, x + XGun*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(100,100,100), image_alpha)
+		draw_sprite_ext(ds_list_find_value(skinparts, 3), 0, x + XGun*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, make_color_rgb(70,70,70), image_alpha)
+		draw_sprite_ext(ds_list_find_value(skinparts, 2), 0, x + XGun*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, wScale, wScale, KillInfo_PointingTo, c_white, image_alpha)
+	}
 }
 Tank_Draw(x + XKilled*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, KillInfo_TankScale * KillInfo_ScaleFixer, KillInfo_PointingTo, Tank2_PrimaryColor,
 			Tank2_SecondaryColor, true, Tank2_SkinWheel,
@@ -30,4 +42,5 @@ Tank_Draw(x + XKilled*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, Kill
 			Tank2_SkinCartPainted, Tank2_SkinCartPaint, true, color1,
 			Tank2_SkinCannonGlow, Tank2_SkinCannonPainted, Tank2_SkinCannonPaint,
 			Tank2_SkinCannonChasis, Tank2_SkinCannonPrimary, Tank2_SkinCannonSecondary, KillInfo_PointingTo,
-			Tank2_GunPrimaryColor, Tank2_GunSecondaryColor, false, true)
+			Tank2_GunPrimaryColor, Tank2_GunSecondaryColor, false, true,
+			(Tank2_ScopeID > -1), Tank2_SkinScopeChasis, Tank2_SkinScopePainted, Tank2_SkinScopeGlow, Tank2_SkinScopeColor)
