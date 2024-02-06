@@ -8,6 +8,7 @@ else global.BotsCustomized = (global.BotsCustomized == -2) ? false : true
 if (variable_global_exists("OldDefenders") == false) global.OldDefenders = irandom(1)
 global.Defenders = global.OldDefenders
 if (variable_global_exists("Match_Players") == false) global.Match_Players = ds_list_create()
+Match_Minimap = Match_MakeMiniMap()
 randomise()
 Match_MakeGrid()
 Match_TotalMatchs = 5

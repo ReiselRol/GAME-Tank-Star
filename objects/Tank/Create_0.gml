@@ -115,6 +115,7 @@ Tank_Team = 0
 Tank_Kills = 0
 Tank_DropCooldown = 0
 Tank_MaxDropCooldown = 60
+Tank_IsInvisible = false
 
 Tank_GunID = VTank_GunID  //Gun 1
 Tank_SkinCannonPaint = VTank_SkinCannonPaint
@@ -128,6 +129,7 @@ Tank_ScopeID2 = VTank_ScopeID2
 Skin_SetSecondaryScopeSkin(VTank_ScopeID2)
 Tank_CartSkin = 0
 Tank_SkinCartPaint = VTank_SkinCartPaint
+Tank_HasTheSpike = false
 
 // Controls
 

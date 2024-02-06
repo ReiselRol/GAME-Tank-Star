@@ -8,7 +8,8 @@
         "d32e9299-5c59-4877-9770-ad1ef341bbc4",
         "527cd87d-ec0e-4dbe-bcfe-839e6942ebee",
         "7435e856-1060-46de-bad5-4596a56ca505",
-        "6338cc6f-c87a-4a60-a7cd-1024c7fa8b6a"
+        "6338cc6f-c87a-4a60-a7cd-1024c7fa8b6a",
+        "596bdb26-1a5d-42c7-b92a-5e396a238166"
     ],
     "filterType": "GMObject",
     "folderName": "Projs",

@@ -3,7 +3,7 @@ var MyID = id
 var myCamera = Camera_CameraHitbox
 var listOfPossibles = ds_list_create()
 with (Tank) {
-	if (MyID.Tank_Team != Tank_Team && place_meeting(x, y, myCamera)) {
+	if (MyID.Tank_Team != Tank_Team && place_meeting(x, y, myCamera) && Tank_IsInvisible == false) {
 		var distance = point_distance(x, y, MyID.x, MyID.y)
 		var angle = point_direction(MyID.x, MyID.y, x, y)
 		MyID.Tank_BotPointingTo.image_xscale = distance
@@ -17,18 +17,6 @@ with (Tank) {
 			else if (place_meeting(x, y, HitboxTile) == false) ds_list_add(listOfPossibles, [thisTank, distance])
 		}
 	}
-}
-with (BotTank) {
-	if (MyID.Tank_Team != Tank_Team && place_meeting(x, y, myCamera)) {
-		var distance = point_distance(x, y, MyID.x, MyID.y)
-		var angle = point_direction(MyID.x, MyID.y, x, y)
-		MyID.Tank_BotPointingTo.image_xscale = distance
-		MyID.Tank_BotPointingTo.image_angle = angle
-		var thisTank = id
-		with (MyID.Tank_BotPointingTo){
-			if (place_meeting(x, y, HitboxTile) == false) ds_list_add(listOfPossibles, [thisTank, distance])
-		}
-	}	
 }
 var size = ds_list_size(listOfPossibles)
 if (size == 0) return noone

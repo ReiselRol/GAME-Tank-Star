@@ -8,7 +8,7 @@ switch (GunID) {
 	case 4 : return "Marshal"
 	case 5 : return "Bucky"
 	case 6 : return "Stinger"
-	case 7 : return "Sonical"
+	case 7 : return "Operator"
 	case 8 : return "Guardian"
 	case 9 : return "Vandal"
 	case 10 : return "Odin"

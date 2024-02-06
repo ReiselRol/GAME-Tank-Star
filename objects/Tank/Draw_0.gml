@@ -1,6 +1,7 @@
 /// @description Inserte aquí la descripción
 if (Tank_MainCamera = true && Tank_DrawPreShoot == true) Tank_DrawPreShootTriangle()
 var moving = (Tank_Hsp == 0 && Tank_Vsp == 0)
+if (Tank_IsInvisible == true) draw_set_alpha(0.5)
 if (Tank_RespectTankColors == false) {
 	if (Tank_WeaponSelected == 1) Tank_Draw(x, y, Tank_Scale, Tank_Angle, Tank_PrimaryColor,
 				Tank_SecondaryColor, Tank_IsGlowActive, Tank_SkinWheel,
@@ -36,3 +37,4 @@ if (Tank_RespectTankColors == false) {
 				Tank_PrimaryColor, Tank_SecondaryColor, moving, (Tank_GunID2 > -1),
 				(Tank_ScopeID2 > -1), Tank_SkinScopeChasis2, Tank_SkinScopePainted2, Tank_SkinScopeGlow2, Tank_SkinScopeColor2)
 }
+if (Tank_IsInvisible == true) draw_set_alpha(1)

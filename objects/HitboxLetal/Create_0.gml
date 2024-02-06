@@ -5,7 +5,8 @@ Damage_Damage = 0
 Damage_ToFollow = 0
 Damage_From = 0
 Damage_Piercing = 1
-Damage_Team = 0
+Damage_Team = -2
+Damage_isFromHabilities = false
 
 KillInfo_KillerGun = -1
 Tank_PrimaryColor = 0

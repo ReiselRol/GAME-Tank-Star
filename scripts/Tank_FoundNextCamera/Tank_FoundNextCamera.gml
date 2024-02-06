@@ -22,4 +22,5 @@ if (Tank_MainCamera == true) {
 			}
 		}
 	}
+	if (founded == true) instance_destroy(Camera_CameraHitbox)
 }

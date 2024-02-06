@@ -80,6 +80,23 @@ if (Camera_Main == true) {
 			draw_text(x + cameraWIdth * 0.2, y + cameraHeight * 0.9, Camera_From.Tank_Shield)
 			draw_set_color(c_white)
 		}
+		if (variable_instance_exists(Match, "Match_Minimap")) {
+			var MapScale = 0.04
+			var XMap = cameraWIdth * 0.02
+			var PinScale = 1
+			var YMap = cameraHeight * 0.15
+			var MapAlpha = 0.6
+			var T = Camera_From.Tank_Team
+			var PinColor = (Camera_From.Tank_Team == 0) ? c_aqua : c_red
+			draw_surface_ext(Match.Match_Minimap, x + XMap, y + YMap, scaleFix * MapScale, scaleFix * MapScale, 0, c_white, MapAlpha)
+			var ID = id
+			with (Tank) {
+				if (Tank_Team == T) {
+					draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, PinColor, 1)
+				}
+			}
+		}
+		
 		draw_set_font(DefaultFont)
 		var blueTeam = 0
 		var redTeam = 0
