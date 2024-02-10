@@ -1,4 +1,7 @@
 /// @description End step for check before
+Spike_isDefusing = false
+var tank_instance = instance_nearest(x, y, Tank)
+if (tank_instance.Tank_Attacker == false && tank_instance.Tank_IsBombKeyPressed == true && point_distance(x, y, tank_instance.x, tank_instance.y) <= 50) Spike_isDefusing = true
 if (Spike_isPlanted == true) {
 	if (Spike_isDefused == false) {
 		if (Spike_isDefusing == false) {
@@ -27,5 +30,11 @@ if (Spike_isPlanted == true) {
 		}
 	} else {
 		Spike_Color = c_white
+	}
+} else {
+	if (speed > 0) {
+		speed -= 1
+		if (Spike_RotateLeft) image_angle -= Spike_RotateSpeed
+		else image_angle += Spike_RotateSpeed
 	}
 }

@@ -7,11 +7,12 @@ with (Tank) {
 	}
 }
 if (tankID != noone) {
-	if (id == tankID) audio_play_sound(audio, 0, false)
+	if (id == tankID) return audio_play_sound(audio, 0, false)
 	else {
 		var distance = distance_to_object(tankID)
-		var volumen = 1 - ( distance / 1000)
+		var volumen = 1 - ( distance / 850)
 		var sound = audio_play_sound(audio, 1, false)
 		audio_sound_gain(sound, volumen, 0)
+		return sound
 	}
 }

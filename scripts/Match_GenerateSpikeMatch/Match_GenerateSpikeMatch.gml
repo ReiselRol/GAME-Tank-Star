@@ -9,6 +9,7 @@ if (global.Defenders == 0) {
 		var tank = instance_create_layer(HitboxZone1.x - Match_Distance * 2, HitboxZone1.y, "TankHitboxLayer", Tank)
 		if (global.WinnedTeam == tank.Tank_Team) tank.Tank_Money += 3000
 		else if (global.WinnedTeam > -1) tank.Tank_Money += 1350
+		tank.Tank_Attacker = true
 	}
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
 		global.ActualID ++
@@ -22,11 +23,12 @@ if (global.Defenders == 0) {
 		global.ActualID ++
 		var bot =  Make_Bot( HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i), HitboxZone1.y, 0 , elo)
 		with (bot) {
+			Tank_Attacker = true
 			if (i == 0) {
 				Tank_MainCamera = true
 				Camera_CameraHitbox.Camera_Main = Tank_MainCamera	
-			}
-			Tank_BotZone = nextZone
+			} else if (i == 1) Tank_BotZone = 5
+			else Tank_BotZone = nextZone
 			Tank_GlowColor = Bot_GetBotColor()
 			Tank_IsGlowActive = true
 		}
@@ -39,12 +41,16 @@ if (global.Defenders == 0) {
 	}
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
 		global.ActualID ++
-		Make_Bot(HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone1.y, 1 , elo)
+		var bot = Make_Bot(HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone1.y, 1 , elo)
+		bot.Tank_Attacker = true
 	}
+	var setted = false
 	with (BotTank) {
+		if (setted == false) Tank_BotZone = 5
+		else Tank_BotZone = nextZone
 		Tank_GlowColor = Bot_GetBotColor()
 		Tank_IsGlowActive = true
-		Tank_BotZone = nextZone
+		
 	}
 	for (var i = 1 - reducer; i < teamMates; i++) {
 		global.ActualID ++

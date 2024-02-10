@@ -1,4 +1,11 @@
 /// @description All Frames 60fps
+Tank_CanPlant = place_meeting(x, y, HitboxZoneSpike)
+if (Tank_IsBombKeyPressed == true) {
+	if (Tank_Attacker == true) Tank_TryPlant()
+	else Tank_TryDefuse()
+	
+}
+else Tank_PlantingTime = 0
 if (Tank_IsABot == false) {
 	Tank_MovementFromInputs()
 	Tank_UsePhysics()

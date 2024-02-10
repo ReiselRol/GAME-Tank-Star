@@ -6,7 +6,8 @@
     "children": [
         "d5e30fab-78c4-4ea1-bec9-e276159302f9",
         "716d1bb9-2466-4b4b-81b2-135a2428ec51",
-        "80444ed1-a5a9-4fef-8241-eb1e7bcbbdec"
+        "80444ed1-a5a9-4fef-8241-eb1e7bcbbdec",
+        "9825653d-2137-48b9-9fbb-4291624b63a9"
     ],
     "filterType": "GMSprite",
     "folderName": "PlayerUI",

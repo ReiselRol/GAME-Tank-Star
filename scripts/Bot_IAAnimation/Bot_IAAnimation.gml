@@ -1,6 +1,7 @@
 var angleChanged = true
 if (x == Tank_BotPreviousX && y == Tank_BotPreviousY && Match.Match_IsShopTime == false) {
-	if (Tank_BotTimeWaiting > 0 && Tank_BotEnemie == noone) {
+	if(Tank_BotRandomWaitForMove > 0) Tank_BotRandomWaitForMove --
+	if (Tank_BotTimeWaiting > 0 && Tank_BotEnemie == noone && Tank_BotRandomWaitForMove <= 0) {
 		Tank_BotTimeWaiting--
 		Tank_BotEnemie_LastX = 0
 		Tank_BotEnemie_LastY = 0

@@ -18,7 +18,13 @@
         "5df09e00-ab60-4e58-97b4-a43c719b500d",
         "8716d671-cd90-400e-a26a-59faa9c35a12",
         "8311ac0d-4ae8-49d4-8d25-75a7eeff2068",
-        "7c6ad183-f4a5-437a-9bdc-0ec8fa208e19"
+        "7c6ad183-f4a5-437a-9bdc-0ec8fa208e19",
+        "e98a8ad5-c304-49b9-bfa7-30aff52492f9",
+        "e90cd404-f16c-49aa-b185-2ef90a0a0f70",
+        "f89bda92-99be-4938-8911-5b35398ee2c1",
+        "46bc5ffe-d0a0-42a8-92ef-dc566d2a86b7",
+        "41fd45e5-84cf-4378-bb47-2669e1ad2374",
+        "060241ab-c2ff-45d5-a22d-449ceb09158a"
     ],
     "filterType": "GMScript",
     "folderName": "Tanks",

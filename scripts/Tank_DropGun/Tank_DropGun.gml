@@ -1,4 +1,5 @@
-if ((Tank_WeaponSelected == 1 && Tank_GunID > -1) || (Tank_WeaponSelected == 2 && Tank_GunID2 > -1)) {
+if (Tank_HasTheSpike == true && Tank_IsBombKeyPressed == true) Tank_DropSpike()
+else if ((Tank_WeaponSelected == 1 && Tank_GunID > -1) || (Tank_WeaponSelected == 2 && Tank_GunID2 > -1)) {
 	var newGun = instance_create_layer(x, y, "LetalHitboxLayer", GroundGun)
 	var gunDir = (Tank_Health > 0) ? Tank_PointingTo : irandom(360)
 	newGun.direction = gunDir

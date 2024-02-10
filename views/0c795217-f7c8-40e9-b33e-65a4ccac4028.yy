@@ -17,7 +17,10 @@
         "f0c3826d-a587-461a-9630-52e1ad28fdfb",
         "8b21eb72-d899-42c5-86e0-c3a10ae62ec2",
         "fda4b170-fa7d-448f-aa49-d59ae0579aab",
-        "5a977678-7d12-4070-9668-b3dba39da980"
+        "5a977678-7d12-4070-9668-b3dba39da980",
+        "ae3470fc-03f4-4c6b-a73f-bf215d68af21",
+        "88f385f8-7c93-4f46-9109-c948c7e0d410",
+        "4bdf4431-9032-4b4e-8cb2-7bee5593492c"
     ],
     "filterType": "GMScript",
     "folderName": "BotIA",

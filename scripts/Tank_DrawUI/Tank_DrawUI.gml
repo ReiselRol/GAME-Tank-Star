@@ -87,12 +87,39 @@ if (Camera_Main == true) {
 			var YMap = cameraHeight * 0.15
 			var MapAlpha = 0.6
 			var T = Camera_From.Tank_Team
+			var TID = Camera_From
+			var spikeSize = 0.15
+			var spikeSeparation = 80
 			var PinColor = (Camera_From.Tank_Team == 0) ? c_aqua : c_red
 			draw_surface_ext(Match.Match_Minimap, x + XMap, y + YMap, scaleFix * MapScale, scaleFix * MapScale, 0, c_white, MapAlpha)
 			var ID = id
+			with (TankDeath) {
+				if (Tank_Team == T) draw_sprite_ext(TankDeathPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, (PinScale + 0.25) * scaleFix, (PinScale + 0.25) * scaleFix, 0, PinColor, 1)
+			}
 			with (Tank) {
 				if (Tank_Team == T) {
-					draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, PinColor, 1)
+					draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (TID != id) ? PinColor : c_yellow, 1)
+					if (Tank_Attacker == true && Tank_HasTheSpike == true) draw_sprite_ext(SpikeSprite, 0, ID.x + XMap + (x + spikeSeparation) * MapScale * scaleFix, ID.y + YMap + (y + spikeSeparation) * MapScale * scaleFix, PinScale * scaleFix * spikeSize, PinScale * scaleFix * spikeSize, 0, c_white, 1)
+					if (Tank_IsABot == true) {
+						if (Tank_BotEnemie != noone) {
+							for (var i = 0; i < ds_list_size(Tank_BotLisEnemies); i++) {
+								var TankEnemie = ds_list_find_value(Tank_BotLisEnemies, i) 
+								if (instance_exists(TankEnemie))draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + TankEnemie.x * MapScale * scaleFix, ID.y + YMap + TankEnemie.y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (PinColor == c_aqua) ? c_red : c_aqua, 1)
+							}
+						}
+					} else {
+						with (Tank) {
+							if (place_meeting(x, y, ID) && id != TID && Tank_Team != T) {
+								if (collision_line(id.x, id.y, TID.x, TID.y, HitboxTile, false, true) == noone) draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (PinColor == c_aqua) ? c_red : c_aqua, 1)
+							}
+						}
+					}
+				}
+			}
+			if (TID.Tank_Attacker == true) {
+				with (Spike) {
+					draw_sprite_ext(SpikeSprite, 0, ID.x + XMap + (x) * MapScale * scaleFix, ID.y + YMap + (y) * MapScale * scaleFix, PinScale * scaleFix * spikeSize, PinScale * scaleFix * spikeSize, 0, Spike_Color, 1)
+					draw_sprite_ext(SpikeSprite, 0, ID.x + XMap + (x) * MapScale * scaleFix, ID.y + YMap + (y) * MapScale * scaleFix, PinScale * scaleFix * spikeSize, PinScale * scaleFix * spikeSize, 0, c_white, 1)
 				}
 			}
 		}
@@ -113,6 +140,12 @@ if (Camera_Main == true) {
 		draw_sprite_ext(TimebarSprite, 1, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_aqua, InfoAlpha)
 		draw_sprite_ext(TimebarSprite, 2, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_red, InfoAlpha)
 		draw_sprite_ext(TimebarSprite, 0, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_white, 1)
+		if (instance_exists(Spike)) {
+			if (Spike.Spike_isPlanted) {
+				if (Spike.Spike_isDefused) draw_sprite_ext(SpikeSprite, 1, infoUIX, infoUIY, InfoXscale, InfoXscale, 0, c_black, 1)
+				else draw_sprite_ext(SpikeSprite, 1, infoUIX, infoUIY, InfoXscale, InfoXscale, 0, c_white, 1)
+			}
+		}
 		with (Tank) {
 			if (Tank_Team == 0) {
 				blueTeam ++
@@ -130,5 +163,7 @@ if (Camera_Main == true) {
 				draw_sprite_ext(Tank_SkinCartChasis, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 180, c_white, InfoTankAlpha)
 			}
 		}
+		draw_text(infoUIX - cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[0])
+		draw_text(infoUIX + cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[1])
 	}
 }

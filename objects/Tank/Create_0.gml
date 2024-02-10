@@ -116,6 +116,7 @@ Tank_Kills = 0
 Tank_DropCooldown = 0
 Tank_MaxDropCooldown = 60
 Tank_IsInvisible = false
+Tank_Attacker = false
 
 Tank_GunID = VTank_GunID  //Gun 1
 Tank_SkinCannonPaint = VTank_SkinCannonPaint
@@ -149,6 +150,7 @@ Tank_ActionKey = ord("F")
 Tank_ActionKeyController = gp_face3
 Tank_ScoopingKey = mb_right
 Tank_ScoopingKeyController = gp_shoulderlb
+Tank_BombKey = ord("4")
 
 Tank_IsDropping = false
 Tank_IsScooping = false
@@ -160,8 +162,12 @@ Tank_IsShooting = false
 Tank_IsReloading = false
 Tank_IsShootTapping = false
 Tank_IsDoingAction = false
+Tank_IsBombKeyPressed = false
 
 Tank_PointingTo = 0
+Tank_CanPlant = false
+Tank_PlantingTime = 0
+Tank_PlantingTimeNeeded = G_SetTime(4)
 
 // Customization
 
@@ -187,6 +193,9 @@ Skin_SetSecondarySkin(Tank_GunID2, Tank_CannonSecondarySkin)
 
 Tank_Angle = 0
 Tank_HittedTime = 0
+
+Tank_FirstMove = false;
+Tank_MovementSound = -1;
 
 // Gun Set Up
 

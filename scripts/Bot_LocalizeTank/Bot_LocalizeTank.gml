@@ -18,6 +18,8 @@ with (Tank) {
 		}
 	}
 }
+ds_list_destroy(Tank_BotLisEnemies)
+Tank_BotLisEnemies = ds_list_create()
 var size = ds_list_size(listOfPossibles)
 if (size == 0) return noone
 else {
@@ -25,6 +27,7 @@ else {
 	var possibleTank = -1
 	for (var i = 0; i < size; i++) {
 		var info = ds_list_find_value(listOfPossibles, i)
+		ds_list_add(Tank_BotLisEnemies, info[0])
 		if (info[1] < minimalDistance) {
 			minimalDistance = info[1]
 			possibleTank = info[0]

@@ -3,6 +3,7 @@ if (Tank_IsPlayingWithController == false) {
 	Tank_IsPointingDown = keyboard_check(Tank_DownKey)
 	Tank_IsPointingLeft = keyboard_check(Tank_LeftKey)
 	Tank_IsPointingRight = keyboard_check(Tank_RightKey)
+	Tank_IsBombKeyPressed = keyboard_check(Tank_BombKey)
 	Tank_PointingTo = point_direction(x, y, mouse_x, mouse_y)
 	Tank_IsShooting = mouse_check_button(Tank_ShootKey)
 	Tank_IsReloading = keyboard_check(Tank_ReloadKey)
