@@ -37,4 +37,6 @@ if (Tank_RespectTankColors == false) {
 				Tank_PrimaryColor, Tank_SecondaryColor, moving, (Tank_GunID2 > -1),
 				(Tank_ScopeID2 > -1), Tank_SkinScopeChasis2, Tank_SkinScopePainted2, Tank_SkinScopeGlow2, Tank_SkinScopeColor2)
 }
+if (Tank_DrawStormHandcannon == true) draw_sprite_ext(StormHandCannon, image_index, x, y, 1.25, 1.25, Agent1_GetStormCannonAngle(), c_white, 1)
 if (Tank_IsInvisible == true) draw_set_alpha(1)
+if (Tank_Flashed == true) draw_sprite_ext(FlashedSprite, 0, x, y, Tank_Scale, Tank_Scale, Tank_Angle, c_white, 0.35)

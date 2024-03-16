@@ -1,9 +1,16 @@
 /// @description Props
 
 // Load up
+var agent = 2
 
-var VTank_PrimaryColor = c_blue
-var VTank_SecondaryColor = c_dkgray
+var colors = Skin_AgentSetColors(agent)
+if (agent > 0) {
+	var VTank_PrimaryColor = colors[0]
+	var VTank_SecondaryColor = colors[1]
+} else {
+	var VTank_PrimaryColor = c_blue
+	var VTank_SecondaryColor = c_dkgray
+}
 var VTank_GunPrimaryColor = VTank_PrimaryColor
 
 var VTank_GunSecondaryColor = VTank_SecondaryColor
@@ -98,6 +105,10 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 
 // General Props
 
+Tank_Flashed = false
+Tank_CanScope = true
+Tank_CanShoot = true
+Tank_AgentID = agent
 Tank_Money = VTank_Money
 Tank_PlayerID = VTank_PlayerID
 Tank_RespectTankColors = false
@@ -128,15 +139,15 @@ Tank_SkinSecondaryCannonPaint = VTank_SkinSecondaryCannonPaint
 Tank_CannonSecondarySkin = VTank_CannonSecondarySkin
 Tank_ScopeID2 = VTank_ScopeID2
 Skin_SetSecondaryScopeSkin(VTank_ScopeID2)
-Tank_CartSkin = 0
 Tank_SkinCartPaint = VTank_SkinCartPaint
 Tank_HasTheSpike = false
+Tank_Bars = ds_list_create()
 
 // Controls
 
 Tank_IsPlayingWithController = false
 Tank_DrawPreShoot = true
-
+Tank_HabilitiesSelected = [false, false, false, false]
 Tank_UppKey = ord("W")
 Tank_DownKey = ord("S")
 Tank_LeftKey = ord("A")
@@ -151,6 +162,11 @@ Tank_ActionKeyController = gp_face3
 Tank_ScoopingKey = mb_right
 Tank_ScoopingKeyController = gp_shoulderlb
 Tank_BombKey = ord("4")
+Tank_EKey = ord("E")
+Tank_QKey = ord("Q")
+Tank_CKey = ord("C")
+Tank_KKey = ord("K")
+
 
 Tank_IsDropping = false
 Tank_IsScooping = false
@@ -163,6 +179,11 @@ Tank_IsReloading = false
 Tank_IsShootTapping = false
 Tank_IsDoingAction = false
 Tank_IsBombKeyPressed = false
+
+Tank_EKeyPressed = false
+Tank_QKeyPressed = false
+Tank_CKeyPressed = false
+Tank_KKeyPressed = false
 
 Tank_PointingTo = 0
 Tank_CanPlant = false
@@ -184,16 +205,19 @@ Tank_GlowColor = c_red
 Tank_IsGlowActive = false
 Tank_WheelsSkin = 0
 Tank_SkinWheel = Wheels0
+Tank_AgentUI = noone
 
-Skin_SetChasisSkin(Tank_CartSkin)
 Skin_SetPrimarySkin(Tank_GunID, Tank_CannonSkin)
 Skin_SetSecondarySkin(Tank_GunID2, Tank_CannonSecondarySkin)
 
 // Animation 
 
+Tank_DrawStormHandcannon = false
+Tank_TrailColor = c_black
 Tank_Angle = 0
 Tank_HittedTime = 0
 
+Tank_StartedDefusing = false
 Tank_FirstMove = false;
 Tank_MovementSound = -1;
 
@@ -233,4 +257,7 @@ image_alpha = 1
 image_xscale = Tank_Scale
 image_yscale = Tank_Scale
 event_user(0)
+
+Skin_SetChasisSkin(Tank_AgentID)
+if (Tank_AgentID > 0) Agent_SetAgent(Tank_AgentID)
 Tank_FixWeaponSelection()

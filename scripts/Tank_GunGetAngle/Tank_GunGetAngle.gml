@@ -21,11 +21,11 @@ switch (GunID) {
 	case 2 : return 2 * reducer2//Sheriff
 	case 3 : return 4 * reducer2// Frenzy
 	case 4 : return 1 * reducer// Marshal
-	case 5 : return 14 * reducer// Bucky
+	case 5 : return 10 * reducer// Bucky
 	case 6 : return 8 * reducer// Stinger
 	case 7 : return 1 * reducer // Sonical
 	case 8 : return 2 * reducer // Guardian
 	case 9 : return 1.5 * reducer // Vandal
 	case 10 : return 17 * reducer // Odin
-	case 11 : return 13 * reducer // Judge
+	case 11 : return 12 * reducer // Judge
 }

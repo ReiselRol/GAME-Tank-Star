@@ -33,5 +33,7 @@ Tank_SkinScopeChasis = 0
 Tank_SkinScopeColor = 0
 Tank_SkinScopeGlow = 0
 Tank_SkinScopePainted = 0
+
+KillInfo_NormalDraw = false
 	
 image_alpha = 0

@@ -3,14 +3,14 @@ if (Tank_GunAmmo > 0 && Tank_WeaponSelected == 1 && Tank_GunID > -1) {
 		Tank_GunCooldown = Tank_GunGetCooldown(Tank_GunID)
 		Tank_GunAmmo --
 		var bulletCount = Tank_GunGetBulletCount(Tank_GunID)
-		var X = x + lengthdir_x(Tank_GunGetLenght(Tank_GunID), Tank_PointingTo)
-		var Y = y + lengthdir_y(Tank_GunGetLenght(Tank_GunID), Tank_PointingTo)
+		var X = x + lengthdir_x(Tank_GunGetLenght(Tank_GunID), Tank_PointingTo) * 1.6
+		var Y = y + lengthdir_y(Tank_GunGetLenght(Tank_GunID), Tank_PointingTo) * 1.6
 		for (var i = 0; i < bulletCount; i++) {
 			var BulletProj = instance_create_layer(X, Y, "ProjsLayer", Tank_GunGetProj(Tank_GunID))
 			var ShootAngle = Tank_GetDisturbedAngle()
 			BulletProj.image_angle = ShootAngle
 			BulletProj.direction = ShootAngle
-			Damagable_MakeDamagable(BulletProj, Tank_GunGetDamage(Tank_GunID), id, Tank_GunGetPiercing(Tank_GunID), Tank_GunGetCooldownHitted(Tank_GunID))
+			Damagable_MakeDamagable(BulletProj, Tank_GunGetDamage(Tank_GunID), id, Tank_GunGetPiercing(Tank_GunID), Tank_GunGetCooldownHitted(Tank_GunID), [true])
 		}
 		if (global.LDM == false) {
 			var bulletSprite = instance_create_layer(x, y, "TankTrailLayer", BulletCase)
@@ -33,7 +33,7 @@ if (Tank_GunAmmo > 0 && Tank_WeaponSelected == 1 && Tank_GunID > -1) {
 			var ShootAngle = Tank_GetDisturbedAngle()
 			BulletProj.image_angle = ShootAngle
 			BulletProj.direction = ShootAngle
-			Damagable_MakeDamagable(BulletProj, Tank_GunGetDamage(Tank_GunID2), id, Tank_GunGetPiercing(Tank_GunID2), Tank_GunGetCooldownHitted(Tank_GunID2))
+			Damagable_MakeDamagable(BulletProj, Tank_GunGetDamage(Tank_GunID2), id, Tank_GunGetPiercing(Tank_GunID2), Tank_GunGetCooldownHitted(Tank_GunID2), [true])
 		}
 		if (global.LDM == false) {
 			var bulletSprite = instance_create_layer(x, y, "TankTrailLayer", BulletCase)

@@ -4,8 +4,8 @@
     "mvc": "1.1",
     "name": "9200e177-907e-4d26-96b1-eff78c06f7f7",
     "children": [
-        "dfbe88b7-5cd3-4d0f-9cdc-34f83e7ffe1a",
-        "383ae70c-ecc6-4a5f-97c2-5c2ec4279bb7"
+        "a6dbad74-c005-46d9-8ed4-4b7fe8c88456",
+        "9f3658c9-16f5-46b6-8a36-ce95a80f47fa"
     ],
     "filterType": "GMObject",
     "folderName": "Particles",

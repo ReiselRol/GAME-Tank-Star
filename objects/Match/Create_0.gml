@@ -15,7 +15,7 @@ Match_TotalMatchs = 5
 Match_FirtsPositionSet = false
 Match_IsShopTime = true
 Match_ShopTime = G_SetTime(5)
-Match_elo = 300
+Match_elo = 1400
 Match_time = G_SetTime(90)
 MatchFinishCooldown = G_SetTime(10)
 Match_PlayerPlay = true
@@ -24,4 +24,5 @@ Match_winner = -1
 Match_finished = false
 Match_Distance = 750 / Match_TotalPlayersOnTeam
 Match_SpikeMatch = true
+Match_UlimitedHabilities = true
 if (Match_SpikeMatch == true) Match_GenerateSpikeMatch(Match_elo)

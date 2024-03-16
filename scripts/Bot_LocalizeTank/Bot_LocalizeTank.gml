@@ -2,6 +2,7 @@
 var MyID = id
 var myCamera = Camera_CameraHitbox
 var listOfPossibles = ds_list_create()
+if (Tank_Flashed == true) return noone
 with (Tank) {
 	if (MyID.Tank_Team != Tank_Team && place_meeting(x, y, myCamera) && Tank_IsInvisible == false) {
 		var distance = point_distance(x, y, MyID.x, MyID.y)
@@ -33,5 +34,14 @@ else {
 			possibleTank = info[0]
 		}
 	}
-	return possibleTank
 }
+var smokeCount = 0
+var theirSmoke = -2
+var mySmoke = -2
+with (possibleTank) if (place_meeting(x, y, Smoke)) theirSmoke = instance_position(x, y, Smoke)
+with (MyID) if (place_meeting(x, y, Smoke)) mySmoke = instance_position(x, y, Smoke)
+if (mySmoke == theirSmoke) {
+	if ((mySmoke == -2 && collision_line(possibleTank.x, possibleTank.y, MyID.x, MyID.y, Smoke, false, true) == noone) || mySmoke != -2) return possibleTank
+	else return noone
+}
+else return noone

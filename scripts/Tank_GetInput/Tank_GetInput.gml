@@ -11,6 +11,10 @@ if (Tank_IsPlayingWithController == false) {
 	Tank_IsDoingAction = keyboard_check_pressed(Tank_ActionKey)
 	Tank_IsScooping = mouse_check_button(Tank_ScoopingKey)
 	Tank_IsDropping = keyboard_check_pressed(Tank_DropKey)
+	Tank_QKeyPressed = keyboard_check_pressed(Tank_QKey)
+	Tank_EKeyPressed = keyboard_check_pressed(Tank_EKey)
+	Tank_CKeyPressed = keyboard_check_pressed(Tank_CKey)
+	Tank_KKeyPressed = keyboard_check_pressed(Tank_KKey)
 } else {
 	var deadzone = 0.2
 	Tank_IsPointingUpp = (gamepad_axis_value(5,gp_axislv) < -deadzone)

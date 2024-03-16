@@ -5,7 +5,7 @@ var objectiveY = 0
 var finalObjective = [0, 0]
 
 var Zone = noone
-if (Tank_BotFirstTimeOnZone == false && Tank_HasTheSpike == false) {
+if (Tank_BotFirstTimeOnZone == false && Tank_HasTheSpike == false && Tank_BotForcePrecisionZone == false) {
 	var size = array_length_1d(zones) - 1
 	while (instance_exists(Zone) == false) Zone = zones[irandom(size)]
 } else Zone = zones[0]

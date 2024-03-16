@@ -3,7 +3,10 @@ var Damage = argument[1]
 var From = argument[2]
 var piercing = argument[3]
 var cooldown = argument[4]
+var normalDraw = argument[5]
 var hitLetal = instance_create_layer(ToFollow.x, ToFollow.y, "LetalHitboxLayer", HitboxLetal)
+
+hitLetal.KillInfo_NormalDraw = normalDraw[0]
 hitLetal.Damage_ToFollow = ToFollow
 hitLetal.Damage_Damage = Damage
 hitLetal.Damage_Piercing = piercing
@@ -33,11 +36,11 @@ if (From != noone) {
 		hitLetal.Tank_GunPrimaryColor = From.Tank_GunPrimaryColor
 		hitLetal.Tank_GunSecondaryColor = From.Tank_GunSecondaryColor
 	
-		hitLetal.Tank_ScopeID = Tank_ScopeID
-		hitLetal.Tank_SkinScopeChasis = Tank_SkinScopeChasis
-		hitLetal.Tank_SkinScopeColor = Tank_SkinScopeColor
-		hitLetal.Tank_SkinScopeGlow = Tank_SkinScopeGlow
-		hitLetal.Tank_SkinScopePainted = Tank_SkinScopePainted
+		hitLetal.Tank_ScopeID = From.Tank_ScopeID
+		hitLetal.Tank_SkinScopeChasis = From.Tank_SkinScopeChasis
+		hitLetal.Tank_SkinScopeColor = From.Tank_SkinScopeColor
+		hitLetal.Tank_SkinScopeGlow = From.Tank_SkinScopeGlow
+		hitLetal.Tank_SkinScopePainted = From.Tank_SkinScopePainted
 	} else {
 		hitLetal.KillInfo_KillerGun = From.Tank_GunID2
 		hitLetal.Tank_SkinCannonGlow = From.Tank_SkinSecondaryCannonGlow
@@ -49,11 +52,11 @@ if (From != noone) {
 		hitLetal.Tank_GunPrimaryColor = From.Tank_GunPrimaryColor2
 		hitLetal.Tank_GunSecondaryColor = From.Tank_GunSecondaryColor2
 	
-		hitLetal.Tank_ScopeID = Tank_ScopeID2
-		hitLetal.Tank_SkinScopeChasis = Tank_SkinScopeChasis2
-		hitLetal.Tank_SkinScopeColor = Tank_SkinScopeColor2
-		hitLetal.Tank_SkinScopeGlow = Tank_SkinScopeGlow2
-		hitLetal.Tank_SkinScopePainted = Tank_SkinScopePainted2
+		hitLetal.Tank_ScopeID = From.Tank_ScopeID2
+		hitLetal.Tank_SkinScopeChasis = From.Tank_SkinScopeChasis2
+		hitLetal.Tank_SkinScopeColor = From.Tank_SkinScopeColor2
+		hitLetal.Tank_SkinScopeGlow = From.Tank_SkinScopeGlow2
+		hitLetal.Tank_SkinScopePainted = From.Tank_SkinScopePainted2
 	}
 } else hitLetal.Damage_isFromHabilities = true
 hitLetal.image_xscale = ToFollow.image_xscale

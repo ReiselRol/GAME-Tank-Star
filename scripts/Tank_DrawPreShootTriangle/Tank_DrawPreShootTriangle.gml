@@ -28,7 +28,7 @@ if (canDraw == true) {
 	var YRight = 0
 	var XLeft = 0
 	var YLeft = 0
-	var distance = 2000
+	var distance = 3000
 	var angleDerecha = Tank_PointingTo - angle
 	var angleIzquierda = Tank_PointingTo + angle
 	XRight = Xinitial + lengthdir_x(distance, angleDerecha)

@@ -9,7 +9,9 @@
         "c2451ccd-16dd-4e36-9dcb-69c810637411",
         "893f295a-1ab1-4116-b5d4-51a01d00fc68",
         "91f50de0-0e15-4556-8181-080414f1a0e5",
-        "5ef5f3fa-5943-40ca-9ef4-b54d215ceb19"
+        "5ef5f3fa-5943-40ca-9ef4-b54d215ceb19",
+        "e71ec22d-9f4f-4652-977f-b59ca8c2503c",
+        "b5175fde-ad99-47d8-b986-a067466e24e0"
     ],
     "filterType": "GMSound",
     "folderName": "Match",

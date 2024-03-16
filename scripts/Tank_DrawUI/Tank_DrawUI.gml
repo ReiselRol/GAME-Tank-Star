@@ -62,22 +62,45 @@ if (Camera_Main == true) {
 			else if (Camera_From.Tank_GunAmmo2 <= ammo/2) ammoColor = c_red
 			else ammoColor = c_lime
 		}
-		draw_sprite_ext(InfoUI, 3, x + cameraWIdth * 0.6, y + cameraHeight * 0.88, Scale, Scale, 0, ammoColor, 0.45)
-		if (cooldown > 0) draw_sprite_ext(InfoUI, 3, x + cameraWIdth * 0.6, y + cameraHeight * 0.88, Scale, Scale, 0, c_gray, 0.65)
-		draw_sprite_ext(InfoUI, 1, x + cameraWIdth * 0.6, y + cameraHeight * 0.88, Scale, Scale, 0, c_white, 0.6)
+		var LifeUIX = cameraWIdth * 0.38
+		var AmmoUIX = cameraWIdth * 0.616
+		draw_sprite_ext(InfoUI, 3, x + AmmoUIX, y + cameraHeight * 0.88, Scale, Scale, 0, ammoColor, 0.45)
+		if (cooldown > 0) draw_sprite_ext(InfoUI, 3, x + AmmoUIX, y + cameraHeight * 0.88, Scale, Scale, 0, c_gray, 0.65)
+		draw_sprite_ext(InfoUI, 1, x + AmmoUIX, y + cameraHeight * 0.88, Scale, Scale, 0, c_white, 0.6)
 		draw_set_font(AmmoFont)
-		draw_text(x + cameraWIdth * 0.66, y + cameraHeight * 0.9, string(actualAmmo) + " / " + string(actualMaxAmo))
-		draw_sprite_ext(InfoUI, 2, x + cameraWIdth * 0.6, y + cameraHeight * 0.88, Scale, Scale, 0, c_white, 0.6)
-		
+		draw_text_ext_transformed(x + AmmoUIX + cameraWIdth * 0.06, y + cameraHeight * 0.9, string(actualAmmo) + " / " + string(actualMaxAmo), 10, 7000, scaleFix, scaleFix, 0)
+		draw_sprite_ext(InfoUI, 2, x + AmmoUIX, y + cameraHeight * 0.88, Scale, Scale, 0, c_white, 0.6)
+		if (Camera_From.Tank_AgentUI != noone) {
+			var HabilitiesInitialX = 0.39
+			var habilitiessHeight = cameraHeight * 0.88
+			var habilitiesScale = 0.9 * scaleFix
+			var HabilityReaminingsSeparation = sprite_get_width(Camera_From.Tank_AgentUI) * habilitiesScale
+			var separation = 0.055
+			var HabilitiesExtraHeight = 1
+			var HabilitiesAlpha = 0.75
+			for (var i = 0; i < 4; i++) {
+				draw_sprite_ext(AgentUIBuildHelp, 0, x + (HabilitiesInitialX + separation * i) * cameraWIdth, y + habilitiessHeight, habilitiesScale, habilitiesScale, 0, c_white, HabilitiesAlpha)
+				draw_sprite_ext(Camera_From.Tank_AgentUI, i, x + (HabilitiesInitialX + separation * i) * cameraWIdth, y + habilitiessHeight, habilitiesScale, habilitiesScale, 0, c_white, HabilitiesAlpha)
+				if (Camera_From.Tank_HabilitiesSelected[i] == true) draw_sprite_ext(AgentUIBuildHelp, 1, x + (HabilitiesInitialX + separation * i) * cameraWIdth, y + habilitiessHeight, habilitiesScale, habilitiesScale, 0, c_white, HabilitiesAlpha)
+				if (i != 2) {
+					var habilitiesRemaining = (i < 2) ? ((i == 0) ? Camera_From.Tank_CHability : Camera_From.Tank_QHability) : Camera_From.Tank_KHability
+					var maxHabilitiesRemaining = (i < 2) ? ((i == 0) ? Camera_From.Tank_MaxCHability : Camera_From.Tank_MaxQHability) : Camera_From.Tank_MaxKHability
+					for (var j = 0; j < maxHabilitiesRemaining; j++){
+						if (j + 1 <= habilitiesRemaining && habilitiesRemaining != 0) draw_sprite_ext(AgentUIBuildHelp, 2, x + HabilityReaminingsSeparation / maxHabilitiesRemaining * j + (HabilitiesInitialX + separation * i) * cameraWIdth, y + habilitiessHeight, habilitiesScale / maxHabilitiesRemaining, habilitiesScale * HabilitiesExtraHeight, 0, c_white, HabilitiesAlpha)
+						else draw_sprite_ext(AgentUIBuildHelp, 3, x + HabilityReaminingsSeparation / maxHabilitiesRemaining * j + (HabilitiesInitialX + separation * i) * cameraWIdth, y + habilitiessHeight, habilitiesScale / maxHabilitiesRemaining, habilitiesScale * HabilitiesExtraHeight, 0, c_white, HabilitiesAlpha)
+					}
+				}
+			}
+		}
 		
 		var lifeColor = (Camera_From.Tank_Health > 50) ? c_lime : c_red
-		draw_sprite_ext(InfoUI, 3, x + cameraWIdth * 0.4, y + cameraHeight * 0.88, -Scale, Scale, 0, lifeColor, 0.45)
-		draw_sprite_ext(InfoUI, 1, x + cameraWIdth * 0.4, y + cameraHeight * 0.88, -Scale, Scale, 0, c_white, 0.6)
-		draw_text(x + cameraWIdth * 0.26, y + cameraHeight * 0.9, Camera_From.Tank_Health)
+		draw_sprite_ext(InfoUI, 3, x + LifeUIX, y + cameraHeight * 0.88, -Scale, Scale, 0, lifeColor, 0.45)
+		draw_sprite_ext(InfoUI, 1, x + LifeUIX, y + cameraHeight * 0.88, -Scale, Scale, 0, c_white, 0.6)
+		draw_text_ext_transformed(x +LifeUIX - cameraWIdth * 0.14, y + cameraHeight * 0.9, Camera_From.Tank_Health, 10, 7000, scaleFix, scaleFix, 0)
 		if (Camera_From.Tank_Shield > 0) {
 			var shieldColor = (Camera_From.Tank_Shield >= 25) ? c_white : c_red
 			draw_set_color(shieldColor)
-			draw_text(x + cameraWIdth * 0.2, y + cameraHeight * 0.9, Camera_From.Tank_Shield)
+			draw_text_ext_transformed(x + cameraWIdth * 0.2, y + cameraHeight * 0.9, Camera_From.Tank_Shield, 10, 7000, scaleFix, scaleFix, 0)
 			draw_set_color(c_white)
 		}
 		if (variable_instance_exists(Match, "Match_Minimap")) {
@@ -96,6 +119,19 @@ if (Camera_Main == true) {
 			with (TankDeath) {
 				if (Tank_Team == T) draw_sprite_ext(TankDeathPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, (PinScale + 0.25) * scaleFix, (PinScale + 0.25) * scaleFix, 0, PinColor, 1)
 			}
+			with (Smoke) {
+				if (Smoke_Team = T) {
+					draw_sprite_ext(sprite_index, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, image_xscale * scaleFix * MapScale, image_yscale * scaleFix * MapScale, 0, c_white, 0.5)
+					draw_sprite_ext(StormSmokeSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, image_xscale * scaleFix * MapScale, image_yscale * scaleFix * MapScale, 0, c_white, 1)
+				}
+			}
+			with (MarkedTank) {
+				if (instance_exists(Mark_TankMarked)) {
+					with (Mark_TankMarked) {
+						if (Tank_Team != T) draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (PinColor == c_aqua) ? c_red : c_aqua, 1)
+					}
+				}
+			}
 			with (Tank) {
 				if (Tank_Team == T) {
 					draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (TID != id) ? PinColor : c_yellow, 1)
@@ -110,7 +146,7 @@ if (Camera_Main == true) {
 					} else {
 						with (Tank) {
 							if (place_meeting(x, y, ID) && id != TID && Tank_Team != T) {
-								if (collision_line(id.x, id.y, TID.x, TID.y, HitboxTile, false, true) == noone) draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (PinColor == c_aqua) ? c_red : c_aqua, 1)
+								if (collision_line(id.x, id.y, TID.x, TID.y, HitboxTile, false, true) == noone && collision_line(id.x, id.y, TID.x, TID.y, Smoke, false, true) == noone) draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (PinColor == c_aqua) ? c_red : c_aqua, 1)
 							}
 						}
 					}
@@ -163,7 +199,21 @@ if (Camera_Main == true) {
 				draw_sprite_ext(Tank_SkinCartChasis, 0, tankXPos, infoUIY, InfoTankScale, InfoTankScale, 180, c_white, InfoTankAlpha)
 			}
 		}
-		draw_text(infoUIX - cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[0])
-		draw_text(infoUIX + cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[1])
+		draw_text_ext_transformed(infoUIX - cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[0], 10, 7000, scaleFix, scaleFix, 0)
+		draw_text_ext_transformed(infoUIX + cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[1], 10, 7000, scaleFix, scaleFix, 0)
+		var barsSize = ds_list_size(Camera_From.Tank_Bars)
+		var barX = cameraWIdth * 0.15
+		var barY = cameraHeight * 0.85
+		for (var i = 0; i < barsSize; i++) {
+			var bar = ds_list_find_value(Camera_From.Tank_Bars, i)
+			var progresion = bar[1]
+			var total = bar [2]
+			var barProgressionSize = progresion / total
+			var barSize = 1
+			var actualY = barY - cameraHeight * 0.07 * i
+			draw_sprite_ext(LoadingBarSprite, 0, x + barX, y + actualY, barSize * scaleFix, barSize * scaleFix, 0, c_white, 1)
+			draw_sprite_ext(LoadingBarSprite, bar[3], x + barX, y + actualY, barSize * scaleFix * barProgressionSize, barSize * scaleFix, 0, c_white, 1)
+			draw_text_ext_transformed(x+ cameraWIdth * 0.45,y + actualY - cameraHeight * 0.05, bar[0], 10, 7000, scaleFix, scaleFix, 0)
+		}
 	}
 }

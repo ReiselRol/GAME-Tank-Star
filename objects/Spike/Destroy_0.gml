@@ -2,5 +2,5 @@
 // Puede escribir su código en este editor
 if (Spike_isPlanted == true) {
 	var expl = instance_create_layer(x, y, "ZoneLayer", SpikeExplosion)
-	Damagable_MakeDamagable(expl, 999, noone, 1000, 1)
+	Damagable_MakeDamagable(expl, 999, noone, 1000, 1, [false])
 }

@@ -5,4 +5,3 @@ else {
 	if (Tank_IsABot == false) Tank_GetInput()
 	else Tank_GetBotInput()
 }
-Tank_Scooping()

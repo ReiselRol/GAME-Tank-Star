@@ -8,14 +8,18 @@ if (Tank_BotEnemie_LastX > 0) {
 }
 else {
 	Tank_IsBombKeyPressed = false
-	if (Tank_Attacker == true && Tank_HasTheSpike == true && place_meeting(x, y, HitboxZoneSpike)) Tank_IsBombKeyPressed = true
-	else if (Tank_Attacker == false) {
-		if (instance_exists(Spike)) {
+	if (Tank_Attacker == true && Tank_HasTheSpike == true && place_meeting(x, y, HitboxZoneSpike) ) Tank_IsBombKeyPressed = true
+	else if (instance_exists(Spike)) {
+		if (Tank_Attacker == false) {
 			if (Spike.Spike_isPlanted == true && point_distance(x, y, Spike.x, Spike.y) <= 50) Tank_IsBombKeyPressed = true
 			else {
 				Tank_IsBombKeyPressed = false
 				Bot_ChangeUbication()
 			}
+		} else {
+			Bot_ChangeUbication()
+			Tank_IsReloading = true
+			Tank_BotEnemie = noone
 		}
 	}
 	else {

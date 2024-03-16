@@ -23,5 +23,6 @@ if (global.LDM == false) {
 		trail.image_xscale = Tank_Scale
 		trail.image_yscale = Tank_Scale
 		trail.image_angle = Tank_Angle
+		trail.image_blend = Tank_TrailColor
 	}
 }

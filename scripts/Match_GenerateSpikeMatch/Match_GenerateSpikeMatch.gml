@@ -12,7 +12,9 @@ if (global.Defenders == 0) {
 		tank.Tank_Attacker = true
 	}
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
-		global.ActualID ++
+		if (Match_PlayerPlay == false){
+			if (i > 0) global.ActualID ++
+		} else global.ActualID ++
 		var bot = Make_Bot( HitboxZone2.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone2.y, 1 , elo)
 	}
 	with (BotTank) {
@@ -40,7 +42,9 @@ if (global.Defenders == 0) {
 		else if (global.WinnedTeam > -1) tank.Tank_Money += 1350
 	}
 	for (var i = 0; i < Match_TotalPlayersOnTeam; i++) {
-		global.ActualID ++
+		if (Match_PlayerPlay == false){
+			if (i > 0) global.ActualID ++
+		} else global.ActualID ++
 		var bot = Make_Bot(HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone1.y, 1 , elo)
 		bot.Tank_Attacker = true
 	}
