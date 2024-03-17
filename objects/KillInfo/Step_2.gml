@@ -6,10 +6,7 @@ with (Tank) {
 		break
 	}
 }
-var killInfoActuslCount = -1
-with (KillInfo) {
-	killInfoActuslCount ++
-}
+var killInfoActuslCount = instance_number(KillInfo)
 if (killInfoActuslCount < KillInfo_TotalKillInfo) KillInfo_TotalKillInfo = killInfoActuslCount
 x = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) * 0.8
 y = camera_get_view_y(view_camera[0]) + (KillInfo_Scale * 170 * KillInfo_ScaleFixer) * KillInfo_TotalKillInfo + 60 * KillInfo_ScaleFixer

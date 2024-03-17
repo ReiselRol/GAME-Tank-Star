@@ -1,8 +1,6 @@
 /// @description Setting is Bot
 randomise()
 
-Tank_AgentID = 0
-
 Tank_MainCamera = false
 Camera_CameraHitbox.Camera_Main = Tank_MainCamera
 Tank_BotElo = 0

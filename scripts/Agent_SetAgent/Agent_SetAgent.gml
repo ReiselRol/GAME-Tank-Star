@@ -17,9 +17,9 @@ if (AgentID == 1) {
 	Tank_AgentUI = Agent1UI
 } else if (AgentID == 2){
 	agentClass = Agent2
-	Tank_MaxQHability = 3
+	Tank_MaxQHability = 2
 	Tank_MaxCHability = 2
-	Tank_MaxKHability = 8
+	Tank_MaxKHability = 6
 	Tank_QHability = Tank_MaxQHability
 	Tank_CHability = Tank_MaxCHability
 	Tank_KHability = Tank_MaxKHability

@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "06adce82-5ed8-4e2e-ae41-d9114e57849a",
+            "Value": {
+                "id": "045c9e9b-8675-422c-b4c3-71b3a0eba669",
+                "resourcePath": "scripts\\Agent2_E\\Agent2_E.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0785a516-abb1-4cfb-8275-7e9b9a03c638",
             "Value": {
                 "id": "2b504343-08b1-448b-822b-3d97daf001a2",
@@ -716,6 +724,14 @@
                 "id": "1ba7c7d5-ff0e-466e-9abe-73a5e76c75b9",
                 "resourcePath": "sprites\\EliteScopeG0\\EliteScopeG0.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2a6bc42e-c04a-4e90-8adc-5c9e06992e80",
+            "Value": {
+                "id": "4f9b8682-493a-4c2c-9f73-0e6ee26a6045",
+                "resourcePath": "objects\\SpectreEye\\SpectreEye.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1687,6 +1703,14 @@
             }
         },
         {
+            "Key": "62b25a4d-cea4-4fb5-bb9c-5da33a7e6133",
+            "Value": {
+                "id": "4f49d00a-d250-42fd-8b56-8767c54b02b9",
+                "resourcePath": "scripts\\Agent1_IA\\Agent1_IA.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6338cc6f-c87a-4a60-a7cd-1024c7fa8b6a",
             "Value": {
                 "id": "a690b84b-f492-4ab5-a411-8e935875c899",
@@ -1932,6 +1956,14 @@
                 "id": "66fef149-2bc9-4fbd-aadc-9f4a2ee360e3",
                 "resourcePath": "views\\7053552d-6621-49ee-9740-76a87f472b68.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "70ddb52f-ce99-40aa-a6bc-252f7160e5d6",
+            "Value": {
+                "id": "e8b343a3-f6c4-4095-91af-9d34fccfdab4",
+                "resourcePath": "sounds\\SpectreUlti\\SpectreUlti.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2907,6 +2939,14 @@
             "Value": {
                 "id": "756a8254-8507-4f0f-9075-cf25632aa4d7",
                 "resourcePath": "scripts\\Tank_Reload\\Tank_Reload.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a10f8019-e1af-4871-9c35-b172cadc6f92",
+            "Value": {
+                "id": "709341bb-5fc3-4e72-96da-bb5e318021bc",
+                "resourcePath": "scripts\\Agent2_IA\\Agent2_IA.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4391,6 +4431,14 @@
             }
         },
         {
+            "Key": "f34cceeb-1092-40ca-aef9-46c3b94e876b",
+            "Value": {
+                "id": "6c1b9fe6-40ae-4160-abec-97b0662774fe",
+                "resourcePath": "scripts\\Agent2_K\\Agent2_K.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f3f1b1ba-1efb-46ad-8b98-e84e0470057c",
             "Value": {
                 "id": "fa5b8fa3-0c9a-40d2-aebc-c2477e5332ec",
@@ -4583,6 +4631,14 @@
             }
         },
         {
+            "Key": "fcd998ac-c2f0-4850-b42c-81ff4bed2dbf",
+            "Value": {
+                "id": "ad4039b6-28c6-47d7-acc8-2db5c70a4556",
+                "resourcePath": "sounds\\MarkedSound\\MarkedSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "fd103596-f04a-47d7-9cd3-ef4dc8c8523b",
             "Value": {
                 "id": "8c8650b1-49e0-4db7-ac01-64b7dc142d36",
@@ -4595,6 +4651,14 @@
             "Value": {
                 "id": "54670851-a1b5-43bf-93c4-c9b46c387f91",
                 "resourcePath": "sprites\\HitboxWalkingTankSprite\\HitboxWalkingTankSprite.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fd9ef8f2-0412-44c0-b443-69370c0a7d67",
+            "Value": {
+                "id": "fa9f1b17-dcaa-4108-915c-3fe10fdb5110",
+                "resourcePath": "sprites\\SpectreEyeSprite\\SpectreEyeSprite.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4798,8 +4862,12 @@
         "966706b1-903d-4197-a0b0-4ce966168f69",
         "828b18ae-988a-4521-af17-69894ebdde6c",
         "cfdeed6f-fce5-4823-8cf7-a30a31ec4f95",
+        "62b25a4d-cea4-4fb5-bb9c-5da33a7e6133",
         "9e054b26-20ce-4996-a024-b9f5d1b964f4",
-        "476a3d8f-b289-4e68-8a05-0b891d8736e4"
+        "476a3d8f-b289-4e68-8a05-0b891d8736e4",
+        "06adce82-5ed8-4e2e-ae41-d9114e57849a",
+        "a10f8019-e1af-4871-9c35-b172cadc6f92",
+        "f34cceeb-1092-40ca-aef9-46c3b94e876b"
     ],
     "tutorial": ""
 }

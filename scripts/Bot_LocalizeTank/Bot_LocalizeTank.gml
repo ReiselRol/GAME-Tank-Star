@@ -11,11 +11,18 @@ with (Tank) {
 		MyID.Tank_BotPointingTo.image_angle = angle
 		var thisTank = id
 		with (MyID.Tank_BotPointingTo){
-			if (place_meeting(x, y, HitboxTile) == false && place_meeting(x, y, HitboxTileNoShadows) == true) {
-				MyID.Tank_BotEnemie_LastX = thisTank.x
-				MyID.Tank_BotEnemie_LastY = thisTank.y
+			if (thisTank.Tank_Marked == false) {
+				if (place_meeting(x, y, HitboxTile) == false && place_meeting(x, y, HitboxTileNoShadows) == true) {
+					MyID.Tank_BotEnemie_LastX = thisTank.x
+					MyID.Tank_BotEnemie_LastY = thisTank.y
+				}
+				else if (place_meeting(x, y, HitboxTile) == false) ds_list_add(listOfPossibles, [thisTank, distance])
+			} else {
+				if (place_meeting(x, y, HitboxTile) == true) {
+					MyID.Tank_BotEnemie_LastX = thisTank.x
+					MyID.Tank_BotEnemie_LastY = thisTank.y
+				} else ds_list_add(listOfPossibles, [thisTank, distance])
 			}
-			else if (place_meeting(x, y, HitboxTile) == false) ds_list_add(listOfPossibles, [thisTank, distance])
 		}
 	}
 }

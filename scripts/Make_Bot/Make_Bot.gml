@@ -6,8 +6,8 @@ var bottank = instance_create_layer(X, Y, "TankHitboxLayer", BotTank)
 with (bottank) {
 	randomise()
 	if (global.BotsCustomized == false) {
-		Tank_PrimaryColor = make_color_rgb(irandom(255), irandom(255), irandom(255))
-		Tank_SecondaryColor = make_color_rgb(irandom(255), irandom(255), irandom(255))
+		//Tank_PrimaryColor = make_color_rgb(irandom(255), irandom(255), irandom(255))
+		//Tank_SecondaryColor = make_color_rgb(irandom(255), irandom(255), irandom(255))
 		Tank_GunPrimaryColor = Tank_PrimaryColor
 		Tank_GunSecondaryColor = Tank_SecondaryColor
 		var Tank_Info = ds_list_find_value(global.Match_Players, Tank_PlayerID)

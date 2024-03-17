@@ -132,6 +132,15 @@ if (Camera_Main == true) {
 					}
 				}
 			}
+			with (SpectreEye) {
+				if (SpectreEye_Team == T) draw_sprite_ext(SpectreEyeSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, image_xscale * scaleFix * MapScale * 4, image_yscale * scaleFix * MapScale * 4, image_angle, c_white, 1)
+			}
+			with (SpectreGhostCross) {
+				if (SpectreGhostCross_Team == T) draw_sprite_ext(SpectreGhostCrossSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, image_xscale * scaleFix * MapScale * 3, image_yscale * scaleFix * MapScale * 3, image_angle, c_white, 1)
+			}
+			with (SpectreProj) {
+				if (SpectreProj_Team == T) draw_sprite_ext(SpectreProjSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, image_xscale * scaleFix * MapScale * 2.5, image_yscale * scaleFix * MapScale * 2.5, image_angle, c_white, 1)
+			}
 			with (Tank) {
 				if (Tank_Team == T) {
 					draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (TID != id) ? PinColor : c_yellow, 1)

@@ -6,5 +6,5 @@ SpectreProj_Damage = 25
 SpectreProj_Piercing = 3
 Proj_IsTouching = false
 speed = 30
-image_xscale = 2
+image_xscale = 1.5
 image_yscale = 2

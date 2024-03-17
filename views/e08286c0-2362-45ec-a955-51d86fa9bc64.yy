@@ -7,7 +7,8 @@
         "85995910-1ea1-4ba1-be82-62b7119ab55a",
         "875b5c84-90da-4e9c-ad0e-acaee64531ed",
         "b9445481-3c82-4b75-9e2c-65c976661bae",
-        "ced8aaf0-3401-40a9-beba-81a238160e89"
+        "ced8aaf0-3401-40a9-beba-81a238160e89",
+        "70ddb52f-ce99-40aa-a6bc-252f7160e5d6"
     ],
     "filterType": "GMSound",
     "folderName": "Agent2",

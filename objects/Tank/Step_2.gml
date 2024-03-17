@@ -1,5 +1,6 @@
 /// @description All the core
 Tank_Scooping()
+if (Tank_SlowDebuffTime > 0) Tank_MvSpeed *= 0.4
 Tank_CanPlant = place_meeting(x, y, HitboxZoneSpike)
 if (Tank_IsBombKeyPressed == true) {
 	if (Tank_Attacker == true) Tank_TryPlant()

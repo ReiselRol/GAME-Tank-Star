@@ -11,8 +11,13 @@ if (Tank_BotFirstTimeOnZone == false && Tank_HasTheSpike == false && Tank_BotFor
 } else Zone = zones[0]
 objectiveX = Zone.x
 objectiveY = Zone.y
+
 var randomX = irandom(Zone.image_xscale * 10) / 2
 var randomY = irandom(Zone.image_yscale * 10) / 2
+while (place_meeting(randomX, randomY, HitboxTile) || place_meeting(randomX, randomY, HitboxTileNoShadows)) {
+	randomX = irandom(Zone.image_xscale * 10) / 2
+	randomY = irandom(Zone.image_yscale * 10) / 2
+}
 if (irandom(1) == 0) objectiveX += randomX
 else objectiveX -= randomX
 if (irandom(1) == 0) objectiveY += randomY

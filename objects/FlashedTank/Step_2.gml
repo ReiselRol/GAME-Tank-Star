@@ -4,7 +4,7 @@ if (instance_exists(Flash_TankFlashed)) {
 	x = Flash_TankFlashed.x
 	y = Flash_TankFlashed.y
 	Flash_TankFlashed.Tank_Flashed = true
-	image_xscale = Flash_TankFlashed.Camera_Zoom / Flash_TankFlashed.Camera_DefautZoom * 0.4
+	image_xscale = Flash_TankFlashed.Camera_Zoom / Flash_TankFlashed.Camera_DefautZoom * 0.5
 	image_yscale = image_xscale
 	if (Flash_TimeFlash > 0) Flash_TimeFlash --
 	else {

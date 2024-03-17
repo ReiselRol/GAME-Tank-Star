@@ -4,25 +4,28 @@ if (Agent_Tank.Tank_QHability > 0 && Agent_isTping == false && Match.Match_ShopT
 		else {
 			Agent_TpSelected = true	
 			Agent_GonnaThrowGhostCross = false
+			Agent_EyeSelected = false
 		}
 	}
 	if (Agent_TpSelected == true) {
+		var pointingX = (Agent_Tank.Tank_IsABot == true) ? Agent_Tank.Tank_BotNextX : mouse_x
+		var pointingY = (Agent_Tank.Tank_IsABot == true) ? Agent_Tank.Tank_BotNextY : mouse_y
 		Agent_Tank.Tank_DrawPreShoot = false
-		x = mouse_x
+		x = pointingX
 		Agent_Tank.Tank_GunCooldown = 10
-		y = mouse_y
-		Agent_canTp = (collision_line(Agent_Tank.x, Agent_Tank.y, mouse_x, mouse_y, HitboxTile, false, true) != noone && place_meeting(x, y, HitboxTile) == false && place_meeting(x, y, HitboxTileNoShadows) == false)
+		y = pointingY
+		Agent_canTp = (collision_line(Agent_Tank.x, Agent_Tank.y, pointingX, pointingY, HitboxTile, false, true) != noone && place_meeting(x, y, HitboxTile) == false && place_meeting(x, y, HitboxTileNoShadows) == false)
 		if (Agent_Tank.Tank_IsShootTapping == true) {
 			Agent_TpSelected = false
 			if (Agent_canTp == true) {
 				Agent_Tank.Tank_IsShootTapping = false
 				Agent_Tank.Tank_IsShooting = false
-				Agent_TpX = mouse_x
-				Agent_TpY = mouse_y
+				Agent_TpX = pointingX
+				Agent_TpY = pointingY
 				with(Agent_Tank) {
 					AudioPlaySound(SpectralTP)
-					x = mouse_x
-					y = mouse_y
+					x = pointingX
+					y = pointingY
 					AudioPlaySound(SpectralTP)
 				}
 				instance_create_layer(Agent_Tank.x, Agent_Tank.y, "ProjsLayer", SpectreTPParticle)

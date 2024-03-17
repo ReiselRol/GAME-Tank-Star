@@ -1,7 +1,7 @@
 /// @description Props
 
 // Load up
-var agent = 2
+var agent = irandom(1) + 1
 
 var colors = Skin_AgentSetColors(agent)
 if (agent > 0) {
@@ -48,11 +48,11 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 									   VTank_GunID, VTank_SkinCannonPaint, VTank_CannonSkin,
 									   VTank_GunID2, VTank_SkinSecondaryCannonPaint, VTank_CannonSecondarySkin,
 									   VTank_Shield, VTank_Name, VTank_PlayerID, VTank_SkinCartPaint, Alive, VTank_Money,
-									   VTank_ScopeID, VTank_ScopeID2])
+									   VTank_ScopeID, VTank_ScopeID2, agent])
 } else {
 	
 	var Tank_Info = ds_list_find_value(global.Match_Players, global.ActualID)
-	
+	agent = Tank_Info[20]
 	if (Tank_Info[16] == true) {
 
 		VTank_PrimaryColor = Tank_Info[0]
@@ -105,7 +105,9 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 
 // General Props
 
+Tank_SlowDebuffTime = 0
 Tank_Flashed = false
+Tank_Marked = false
 Tank_CanScope = true
 Tank_CanShoot = true
 Tank_AgentID = agent

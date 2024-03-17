@@ -2,6 +2,7 @@
 // Puede escribir su código en este editor
 var agent = id
 if (instance_exists(Agent_Tank)) {
+	if (Agent_Tank.Tank_IsABot == true) Agent1_IA()
 	Agent1_E()
 	Agent1_Q()
 	Agent1_C()

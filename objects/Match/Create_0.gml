@@ -24,5 +24,5 @@ Match_winner = -1
 Match_finished = false
 Match_Distance = 750 / Match_TotalPlayersOnTeam
 Match_SpikeMatch = true
-Match_UlimitedHabilities = true
+Match_UlimitedHabilities = false
 if (Match_SpikeMatch == true) Match_GenerateSpikeMatch(Match_elo)
