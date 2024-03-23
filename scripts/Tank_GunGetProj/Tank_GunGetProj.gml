@@ -8,6 +8,7 @@ switch (GunID) {
 	case 7 : return SuperSonicBullet // Sonical
 	case 8 : return SniperBullet // Guardian
 	case 9 : return HighBullet // Vandal
+	case 10 : return HighBullet // Odin
 	case 11 : return ShootgunBullet // Judge
 	default : return Bullet
 }

@@ -11,9 +11,9 @@ if (Agent_Tank.Tank_KKeyPressed == true && Agent_Tank.Tank_KHability == Agent_Ta
 		eye.SpectreEye_Team = ag.Tank_Team
 		eye.SpectreEye_MaxTime = G_SetTime(300)
 		eye.SpectreEye_Time = G_SetTime(300)
-		
+		var randomSearcherCount = irandom(2) + 1
 		var randomAngle = irandom(360)
-		for (var i = 0; i < 3; i++) {
+		for (var i = 0; i < randomSearcherCount; i++) {
 			var cross = instance_create_layer(x, y, "ProjsLayer", SpectreGhostCross)
 			cross.direction = randomAngle + 120 * i
 			cross.SpectreGhostCross_TankID = ag

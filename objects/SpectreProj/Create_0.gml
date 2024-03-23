@@ -2,7 +2,7 @@
 AudioPlaySound(SpectreProjSpawn)
 SpectreProj_TankId = noone
 SpectreProj_Team = 0
-SpectreProj_Damage = 25
+SpectreProj_Damage = 15
 SpectreProj_Piercing = 3
 Proj_IsTouching = false
 speed = 30

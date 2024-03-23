@@ -11,12 +11,27 @@ with (Tank) {
 if (Spike_isPlanted == true) {
 	if (Spike_isDefused == false) {
 		if (Spike_isDefusing == false) {
+			if (Spike_DefusingSound != noone) {
+				audio_stop_sound(Spike_DefusingSound)
+				Spike_DefusingSound = noone
+			}
 			if (Spike_DefusedTime < Spike_MidddleDefusingTime) {
 				if (Spike_DefusedTime > 0) Spike_DefusedTime --
 			} else {
 				if (Spike_DefusedTime > Spike_MidddleDefusingTime) Spike_DefusedTime --
 			}
-		} else Spike_DefusedTime ++
+		} else {
+			if (Spike_DefusingSound == noone) {
+				Spike_DefusingSound = AudioPlaySound(UnplantingsSpikeSound)
+				var actualMoment = G_GetTime(Spike_DefusingSound) - G_GetTime(Spike_AllTimeNeedToDefuse)
+				if (actualMoment > 0) {
+					var duracion_total = audio_sound_length(UnplantingsSpikeSound)
+					if (actualMoment > duracion_total) actualMoment = duracion_total
+					audio_sound_set_track_position(Spike_DefusingSound, actualMoment)
+				}
+			}
+			Spike_DefusedTime ++
+		}
 		Spike_isDefused = (Spike_DefusedTime >= Spike_AllTimeNeedToDefuse)
 		if (Spike_isDefused == false) {
 			Spike_TimeToExplode--

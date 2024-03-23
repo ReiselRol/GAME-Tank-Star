@@ -1,2 +1,2 @@
 /// @description Take The Damage
-Tank_TakeDamage(other)
+if (Tank_Health > 0) Tank_TakeDamage(other)

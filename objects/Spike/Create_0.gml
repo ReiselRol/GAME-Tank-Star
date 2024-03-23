@@ -10,6 +10,7 @@ var secondsToDefuse = 7
 Spike_AllTimeNeedToDefuse = G_SetTime(secondsToDefuse)
 Spike_MidddleDefusingTime = G_SetTime(secondsToDefuse / 2)
 Spike_DefusedTime = 0
+Spike_DefusingSound = noone
 
 //Animation
 

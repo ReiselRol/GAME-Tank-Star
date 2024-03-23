@@ -26,6 +26,22 @@ with (Tank) {
 		}
 	}
 }
+with (SpectreEye) {
+	if (MyID.Tank_Team != SpectreEye_Team && place_meeting(x, y, myCamera)) {
+		var distance = point_distance(x, y, MyID.x, MyID.y)
+		var angle = point_direction(MyID.x, MyID.y, x, y)
+		MyID.Tank_BotPointingTo.image_xscale = distance
+		MyID.Tank_BotPointingTo.image_angle = angle
+		var thisTank = id
+		with (MyID.Tank_BotPointingTo){
+			if (place_meeting(x, y, HitboxTile) == false && place_meeting(x, y, HitboxTileNoShadows) == true) {
+				MyID.Tank_BotEnemie_LastX = thisTank.x
+				MyID.Tank_BotEnemie_LastY = thisTank.y
+			}
+			else if (place_meeting(x, y, HitboxTile) == false) ds_list_add(listOfPossibles, [thisTank, distance])
+		}
+	}
+}
 ds_list_destroy(Tank_BotLisEnemies)
 Tank_BotLisEnemies = ds_list_create()
 var size = ds_list_size(listOfPossibles)

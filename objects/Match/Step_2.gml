@@ -1,12 +1,6 @@
 /// @description 
 Match_IsShopTime = ( Match_ShopTime > 0)
-if (Match_IsShopTime) {
-	if (instance_exists(Spike)){
-		if (Spike.Spike_isPlanted == false) Match_time --
-	}
-	else Match_time --
-	Match_ShopTime --
-}
+if (Match_IsShopTime) Match_ShopTime --
 else if (Match_FirtsPositionSet == false) {
 	Match_FirtsPositionSet = true
 	if (Match_SpikeMatch == true) {
@@ -21,7 +15,12 @@ else if (Match_FirtsPositionSet == false) {
 	} else {
 		with (BotTank) Bot_SelectPosition()	
 	}
+} else if (Match_time > 0) {
+	if (instance_exists(Spike)) {
+		if (Spike.Spike_isPlanted == false) Match_time--
+	} else Match_time--
 }
+
 if (Match_finished == false && Match_time > 0) {
 	var finished = true
 	var team = -1

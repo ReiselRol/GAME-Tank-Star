@@ -1,5 +1,8 @@
 if (Tank_CanPlant == true && Tank_HasTheSpike == true) {
 	if (Tank_PlantingTime < Tank_PlantingTimeNeeded)  {
+		if (Tank_PlatingSpikeSound == noone) {
+			Tank_PlatingSpikeSound = AudioPlaySound(PlantingsSpikeSound)	
+		}
 		Tank_PlantingTime ++
 		Tank_IsPointingUpp = false
 		Tank_IsPointingDown = false
@@ -19,6 +22,7 @@ if (Tank_CanPlant == true && Tank_HasTheSpike == true) {
 		Tank_CanScope = true
 		spike.Spike_isPlanted = true
 		Tank_HasTheSpike = false
+		if (Tank_KHability < Tank_MaxKHability) Tank_KHability ++
 		if (Tank_IsABot == true) Bot_GoToZone()
 		Tank_BarDelete("Planting Spike")
 	}

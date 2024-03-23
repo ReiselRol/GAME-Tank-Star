@@ -182,6 +182,7 @@ if (Camera_Main == true) {
 		var InfoTankMargin = 100 * scaleFix
 		var InfoTankScale = 0.75 * scaleFix * InfoTankRelativeScale
 		var InfoTankAlpha = 1
+		var timeDrawed = false
 		draw_sprite_ext(TimebarSprite, 1, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_aqua, InfoAlpha)
 		draw_sprite_ext(TimebarSprite, 2, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_red, InfoAlpha)
 		draw_sprite_ext(TimebarSprite, 0, infoUIX, infoUIY, InfoXscale, InfoYscale, 0, c_white, 1)
@@ -189,6 +190,18 @@ if (Camera_Main == true) {
 			if (Spike.Spike_isPlanted) {
 				if (Spike.Spike_isDefused) draw_sprite_ext(SpikeSprite, 1, infoUIX, infoUIY, InfoXscale, InfoXscale, 0, c_black, 1)
 				else draw_sprite_ext(SpikeSprite, 1, infoUIX, infoUIY, InfoXscale, InfoXscale, 0, c_white, 1)
+			} else {
+				if (instance_exists(Match)) {
+					draw_set_color(c_black)
+					draw_text_ext_transformed(infoUIX - cameraWIdth * 0.01, infoUIY - cameraHeight * 0.01, G_GetTime(Match.Match_time), 10, 7000, scaleFix, scaleFix, 0)
+					draw_set_color(c_white)
+				}	
+			}
+		} else {
+			if (instance_exists(Match)) {
+				draw_set_color(c_black)
+				draw_text_ext_transformed(infoUIX - cameraWIdth * 0.01, infoUIY - cameraHeight * 0.01, G_GetTime(Match.Match_time), 10, 7000, scaleFix, scaleFix, 0)
+				draw_set_color(c_white)
 			}
 		}
 		with (Tank) {

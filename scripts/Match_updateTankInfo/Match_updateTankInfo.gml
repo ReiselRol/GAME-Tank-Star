@@ -25,6 +25,9 @@ for (var cicle = 0; cicle < Match_TotalPlayersOnTeam * 2; cicle ++){
 			Tank_Info[17] = Tank_Money
 			Tank_Info[18] = Tank_ScopeID
 			Tank_Info[19] = Tank_ScopeID2
+			Tank_Info[21] = Tank_QHability
+			Tank_Info[22] = Tank_CHability
+			Tank_Info[23] = Tank_KHability
 			break
 		}
 	}

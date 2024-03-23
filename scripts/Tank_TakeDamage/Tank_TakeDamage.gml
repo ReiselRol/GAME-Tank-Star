@@ -37,6 +37,7 @@ if (Damager.Damage_Cooldown <= 0) {
 				Damager.Damage_From.Tank_Money += 200 
 				Damager.Damage_From.Tank_Kills ++
 				kills = Damager.Damage_From.Tank_Kills
+				if (Damager.Damage_From.Tank_KHability < Damager.Damage_From.Tank_MaxKHability) Damager.Damage_From.Tank_KHability ++
 				with (Damager.Damage_From) {
 					canPlaySound = (Tank_IsABot == false)
 				}
@@ -46,8 +47,10 @@ if (Damager.Damage_Cooldown <= 0) {
 				}
 			} else Match_ShowUIKill(id,Damager)
 			if (canPlaySound == true) {
-				var sound = audio_play_sound(TankKill, 2, false)
-				audio_sound_pitch(sound, 1 + 0.15 * (kills - 2))
+				if (kills < 5) {
+					var sound = audio_play_sound(TankKill, 2, false)
+					audio_sound_pitch(sound, 1 + 0.15 * (kills - 2))
+				}
 			}
 		}
 		if (Damager.Damage_Piercing == 0) instance_destroy(Damager)

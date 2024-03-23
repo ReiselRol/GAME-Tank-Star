@@ -2,7 +2,6 @@
 
 // Load up
 var agent = irandom(1) + 1
-
 var colors = Skin_AgentSetColors(agent)
 if (agent > 0) {
 	var VTank_PrimaryColor = colors[0]
@@ -36,6 +35,11 @@ var VTank_Money = 800
 var VTank_ScopeID = (irandom(5) == 0) ? irandom(2) : -1
 var VTank_ScopeID2 = -1
 
+var remainingK = 0
+var remainingC = 0
+var remainingQ = 0
+
+
 //
 
 if (Tank_GunGetLevel(VTank_GunID) == 2 && VTank_ScopeID > 1) VTank_ScopeID = 1
@@ -48,11 +52,15 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 									   VTank_GunID, VTank_SkinCannonPaint, VTank_CannonSkin,
 									   VTank_GunID2, VTank_SkinSecondaryCannonPaint, VTank_CannonSecondarySkin,
 									   VTank_Shield, VTank_Name, VTank_PlayerID, VTank_SkinCartPaint, Alive, VTank_Money,
-									   VTank_ScopeID, VTank_ScopeID2, agent])
+									   VTank_ScopeID, VTank_ScopeID2, agent, remainingQ, remainingC, remainingK])
 } else {
 	
 	var Tank_Info = ds_list_find_value(global.Match_Players, global.ActualID)
 	agent = Tank_Info[20]
+	remainingQ = Tank_Info[21]
+	remainingC = Tank_Info[22]
+	remainingK = Tank_Info[23]
+	
 	if (Tank_Info[16] == true) {
 
 		VTank_PrimaryColor = Tank_Info[0]
@@ -145,6 +153,10 @@ Tank_SkinCartPaint = VTank_SkinCartPaint
 Tank_HasTheSpike = false
 Tank_Bars = ds_list_create()
 
+Tank_QHability = remainingQ
+Tank_CHability = remainingC
+Tank_KHability = remainingK
+
 // Controls
 
 Tank_IsPlayingWithController = false
@@ -222,6 +234,7 @@ Tank_HittedTime = 0
 Tank_StartedDefusing = false
 Tank_FirstMove = false;
 Tank_MovementSound = -1;
+Tank_PlatingSpikeSound = noone
 
 // Gun Set Up
 

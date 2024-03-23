@@ -1,4 +1,5 @@
 /// @description Inserte aquí la descripción
+
 if (Tank_MainCamera = true && Tank_DrawPreShoot == true) Tank_DrawPreShootTriangle()
 var moving = (Tank_Hsp == 0 && Tank_Vsp == 0)
 if (Tank_IsInvisible == true) draw_set_alpha(0.5)

@@ -10,6 +10,10 @@ else {
 	if (Tank_HasTheSpike == true)
 	Tank_PlantingTime = 0
 	Tank_CanScope = true
+	if (Tank_PlatingSpikeSound != noone) {
+		audio_stop_sound(Tank_PlatingSpikeSound)
+		Tank_PlatingSpikeSound = noone
+	}
 	Tank_BarDelete("Planting Spike")
 	Tank_BarDelete("Defusing Spike")
 }

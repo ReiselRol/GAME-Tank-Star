@@ -1,4 +1,5 @@
 /// @description Grid time
+audio_stop_all()
 randomise()
 global.LDM = false
 global.ActualID = 0
@@ -15,9 +16,9 @@ Match_TotalMatchs = 5
 Match_FirtsPositionSet = false
 Match_IsShopTime = true
 Match_ShopTime = G_SetTime(5)
-Match_elo = 1400
-Match_time = G_SetTime(90)
-MatchFinishCooldown = G_SetTime(10)
+Match_elo = 700
+Match_time = G_SetTime(60)
+MatchFinishCooldown = G_SetTime(6)
 Match_PlayerPlay = true
 Match_TotalPlayersOnTeam = 5
 Match_winner = -1
