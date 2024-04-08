@@ -15,15 +15,19 @@ Match_MakeGrid()
 Match_TotalMatchs = 5
 Match_FirtsPositionSet = false
 Match_IsShopTime = true
-Match_ShopTime = G_SetTime(5)
-Match_elo = 700
+Match_ShopTime = G_SetTime(12)
+Match_elo = 800
 Match_time = G_SetTime(60)
-MatchFinishCooldown = G_SetTime(6)
-Match_PlayerPlay = true
+MatchFinishCooldown = G_SetTime(8)
+Match_PlayerPlay = false
 Match_TotalPlayersOnTeam = 5
 Match_winner = -1
 Match_finished = false
 Match_Distance = 750 / Match_TotalPlayersOnTeam
 Match_SpikeMatch = true
 Match_UlimitedHabilities = false
+Match_isAce = false
+
+Match_surface = surface_create(room_height, room_width)
+
 if (Match_SpikeMatch == true) Match_GenerateSpikeMatch(Match_elo)

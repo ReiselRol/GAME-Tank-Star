@@ -19,10 +19,10 @@ switch (GunID) {
 	case 0 : return 2 * reducer2// classic
 	case 1 : return 15 * reducer2// Shorty
 	case 2 : return 2 * reducer2//Sheriff
-	case 3 : return 4 * reducer2// Frenzy
+	case 3 : return 3 * reducer2// Frenzy
 	case 4 : return 1 * reducer// Marshal
 	case 5 : return 10 * reducer// Bucky
-	case 6 : return 8 * reducer// Stinger
+	case 6 : return 5 * reducer// Stinger
 	case 7 : return 1 * reducer // Sonical
 	case 8 : return 2 * reducer // Guardian
 	case 9 : return 1.5 * reducer // Vandal

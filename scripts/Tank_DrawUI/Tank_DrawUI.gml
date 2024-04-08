@@ -223,6 +223,22 @@ if (Camera_Main == true) {
 		}
 		draw_text_ext_transformed(infoUIX - cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[0], 10, 7000, scaleFix, scaleFix, 0)
 		draw_text_ext_transformed(infoUIX + cameraWIdth * 0.35, infoUIY - cameraHeight * 0.01, global.Wins[1], 10, 7000, scaleFix, scaleFix, 0)
+		
+		if (instance_exists(Match)) {
+			if (Match.Match_finished == true) {
+				if (Match.Match_isAce == false) {
+					draw_sprite_ext(WinnerUISprite, 0, infoUIX, infoUIY, InfoXscale, InfoYscale * 2, 0,(Match.Match_winner == 0) ? c_green : c_red, 1)
+					var WinUIText = (Match.Match_winner == 0) ? "Victory" : "Failure"
+					draw_text_ext_transformed(infoUIX - cameraWIdth * 0.08, infoUIY + cameraHeight * 0.105, WinUIText , 10, 7000, scaleFix * 3.5, scaleFix * 3.5, 0)
+				} else {
+					draw_sprite_ext(WinnerUISprite, 0, infoUIX, infoUIY, InfoXscale, InfoYscale * 2, 0,c_yellow, 1)
+					var WinUIText = "  Ace  "
+					draw_text_ext_transformed(infoUIX - cameraWIdth * 0.08, infoUIY + cameraHeight * 0.105, WinUIText , 10, 7000, scaleFix * 3.5, scaleFix * 3.5, 0)
+				}
+			}
+		}
+		
+		
 		var barsSize = ds_list_size(Camera_From.Tank_Bars)
 		var barX = cameraWIdth * 0.15
 		var barY = cameraHeight * 0.85

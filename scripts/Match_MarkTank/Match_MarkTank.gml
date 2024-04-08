@@ -20,7 +20,7 @@ if (isAlreadyMarked == false) {
 	mark.Mark_TimeMark = time
 	mark.Mark_TimeMaxMarked = time
 	if (tankToMark.Tank_Team != 0) {
-		var sound = audio_play_sound(MarkedSound, 1, false)
+		var sound = AudioPlayNormalSound(MarkedSound)
 		audio_sound_pitch(sound, 0.5 + 0.2 * instance_number(MarkedTank))
 	}
 }

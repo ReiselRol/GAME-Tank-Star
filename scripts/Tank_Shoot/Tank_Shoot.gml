@@ -1,6 +1,8 @@
 if (Tank_GunAmmo > 0 && Tank_WeaponSelected == 1 && Tank_GunID > -1) {
 	if (Tank_GunCooldown <= 0) {
 		Tank_GunCooldown = Tank_GunGetCooldown(Tank_GunID)
+		Tank_GunAnimationKnockback = Tank_GunCooldown + 3
+		if (Tank_GunAnimationKnockback > 18) Tank_GunAnimationKnockback = 18
 		Tank_GunAmmo --
 		var bulletCount = Tank_GunGetBulletCount(Tank_GunID)
 		var X = x + lengthdir_x(Tank_GunGetLenght(Tank_GunID), Tank_PointingTo) * 1.6
@@ -24,6 +26,8 @@ if (Tank_GunAmmo > 0 && Tank_WeaponSelected == 1 && Tank_GunID > -1) {
 } else if (Tank_GunAmmo2 > 0 && Tank_WeaponSelected == 2 && Tank_GunID2 > -1) {
 	if (Tank_GunCooldown <= 0) {
 		Tank_GunCooldown = Tank_GunGetCooldown(Tank_GunID2)
+		Tank_GunAnimationKnockback = Tank_GunCooldown + 3
+		if (Tank_GunAnimationKnockback > 18) Tank_GunAnimationKnockback = 18
 		Tank_GunAmmo2 --
 		var bulletCount = Tank_GunGetBulletCount(Tank_GunID2)
 		var X = x + lengthdir_x(Tank_GunGetLenght(Tank_GunID2), Tank_PointingTo)

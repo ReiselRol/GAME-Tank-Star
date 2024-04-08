@@ -19,7 +19,8 @@ Tank_Draw(x + XKiller*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, Kill
 			Tank_SkinCannonGlow, Tank_SkinCannonPainted, Tank_SkinCannonPaint,
 			Tank_SkinCannonChasis, Tank_SkinCannonPrimary, Tank_SkinCannonSecondary, KillInfo_PointingTo,
 			Tank_GunPrimaryColor, Tank_GunSecondaryColor, false, true,
-			(Tank_ScopeID > -1), Tank_SkinScopeChasis, Tank_SkinScopePainted, Tank_SkinScopeGlow, Tank_SkinScopeColor)
+			(Tank_ScopeID > -1), Tank_SkinScopeChasis, Tank_SkinScopePainted, Tank_SkinScopeGlow, Tank_SkinScopeColor,
+			x + XKiller*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer)
 var skinparts = Skin_GunGetSkin(KillInfo_KillerGun, 0)
 	if (Tank_ScopeID > -1) {
 		var separation = 8
@@ -43,4 +44,5 @@ Tank_Draw(x + XKilled*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer, Kill
 			Tank2_SkinCannonGlow, Tank2_SkinCannonPainted, Tank2_SkinCannonPaint,
 			Tank2_SkinCannonChasis, Tank2_SkinCannonPrimary, Tank2_SkinCannonSecondary, KillInfo_PointingTo,
 			Tank2_GunPrimaryColor, Tank2_GunSecondaryColor, false, true,
-			(Tank2_ScopeID > -1), Tank2_SkinScopeChasis, Tank2_SkinScopePainted, Tank2_SkinScopeGlow, Tank2_SkinScopeColor)
+			(Tank2_ScopeID > -1), Tank2_SkinScopeChasis, Tank2_SkinScopePainted, Tank2_SkinScopeGlow, Tank2_SkinScopeColor,
+			x + XKilled*KillInfo_ScaleFixer, y + YKiller*KillInfo_ScaleFixer)

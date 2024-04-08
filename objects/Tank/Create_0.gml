@@ -179,7 +179,8 @@ Tank_BombKey = ord("4")
 Tank_EKey = ord("E")
 Tank_QKey = ord("Q")
 Tank_CKey = ord("C")
-Tank_KKey = ord("K")
+Tank_KKey = ord("X")
+Tank_DropBombKey = vk_alt
 
 
 Tank_IsDropping = false
@@ -193,6 +194,7 @@ Tank_IsReloading = false
 Tank_IsShootTapping = false
 Tank_IsDoingAction = false
 Tank_IsBombKeyPressed = false
+Tank_DropBombKeyPressed = false
 
 Tank_EKeyPressed = false
 Tank_QKeyPressed = false
@@ -236,10 +238,14 @@ Tank_FirstMove = false;
 Tank_MovementSound = -1;
 Tank_PlatingSpikeSound = noone
 
+Tank_GunAnimationKnockback = 0
+
 // Gun Set Up
 
 Tank_WeaponSelected = 1
 Tank_GunCooldown = 0
+Tank_GunX = x
+Tank_GunY = y
 Tank_GunAutoReuse = Tank_GunGetAutoReuse(Tank_GunID)
 Tank_GunAmmo = Tank_GunGetAmmo(Tank_GunID)
 Tank_GunAmmo2 = Tank_GunGetAmmo(Tank_GunID2)

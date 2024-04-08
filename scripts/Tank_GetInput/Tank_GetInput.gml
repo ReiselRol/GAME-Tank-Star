@@ -15,6 +15,7 @@ if (Tank_IsPlayingWithController == false) {
 	Tank_EKeyPressed = keyboard_check_pressed(Tank_EKey)
 	Tank_CKeyPressed = keyboard_check_pressed(Tank_CKey)
 	Tank_KKeyPressed = keyboard_check_pressed(Tank_KKey)
+	Tank_DropBombKeyPressed = keyboard_check_pressed(Tank_DropBombKey)
 } else {
 	var deadzone = 0.2
 	Tank_IsPointingUpp = (gamepad_axis_value(5,gp_axislv) < -deadzone)

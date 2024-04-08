@@ -431,6 +431,14 @@
             }
         },
         {
+            "Key": "18930343-dd57-411c-adda-729d9b4590e8",
+            "Value": {
+                "id": "a1fc09b5-58a7-48d3-a59c-9d50953b1eb9",
+                "resourcePath": "scripts\\Match_DrawOnSurface\\Match_DrawOnSurface.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "18f04f5d-3b6e-492d-8d8f-6633a2b0531b",
             "Value": {
                 "id": "271a7cf1-5801-4e45-a8ee-0c11dccf5ed9",
@@ -2855,6 +2863,14 @@
             }
         },
         {
+            "Key": "97cdd0cf-a9d1-484a-ba4b-6e97bf1302bf",
+            "Value": {
+                "id": "31d36e97-1519-4965-b867-804c59f109d2",
+                "resourcePath": "sounds\\AceSound\\AceSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "97f3a083-3141-4dd1-b832-1ff5cdf3e7f9",
             "Value": {
                 "id": "f0097c7f-dbb2-4767-9fff-f2aabd2f81fa",
@@ -3284,6 +3300,14 @@
                 "id": "4d485604-fec3-44aa-98f3-3862a7a00ae8",
                 "resourcePath": "objects\\SpectreGhostCross\\SpectreGhostCross.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "aae0b0b5-1c9b-4353-a5e1-cdef45bf0bff",
+            "Value": {
+                "id": "4fe7b8c0-a90f-46e7-98a5-59b8d9b206cd",
+                "resourcePath": "scripts\\Match_AssignBotPositions\\Match_AssignBotPositions.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4135,6 +4159,14 @@
             }
         },
         {
+            "Key": "d9c7a6f2-baff-47d1-8acc-398437ed880d",
+            "Value": {
+                "id": "e834d168-afbe-4a75-b1cc-6c943384ec3a",
+                "resourcePath": "sprites\\WinnerUISprite\\WinnerUISprite.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d9f79431-d1c5-4692-8c00-b224b25b157c",
             "Value": {
                 "id": "9e76faf2-4d91-43e6-a263-31523567da87",
@@ -4938,6 +4970,7 @@
         "32a4abab-34c4-4077-bf5e-959021fa0307",
         "fb360627-324b-4537-95ca-e9442fbbdd3c",
         "663e74dd-0c27-468d-a75f-862d4132c45d",
+        "18930343-dd57-411c-adda-729d9b4590e8",
         "dbe87569-1a44-47e5-a8dc-3a98804c90c2",
         "978273b1-cbaf-4c94-aec8-7e3fc182a272",
         "a9cde645-2eab-49e1-9b70-27823e5552de",
@@ -4947,6 +4980,7 @@
         "46e1920e-9fff-42b1-bdef-e47a7288e50d",
         "4bc1a4f2-07bb-4de5-956b-de11d964180d",
         "e80a57d4-09d3-456d-b2e4-f15c7b009e7e",
+        "aae0b0b5-1c9b-4353-a5e1-cdef45bf0bff",
         "e503729e-549f-4d3a-9541-65c1a85f74a8",
         "32c2ada4-8910-4f20-939a-02f7f307e92d",
         "64a68234-aee0-4024-be9d-8044cea1f5d1",

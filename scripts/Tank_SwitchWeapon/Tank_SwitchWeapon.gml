@@ -5,9 +5,11 @@ if (nextWeapon != Tank_WeaponSelected && Tank_GunCooldown <= 0) {
 		if (Tank_WeaponSelected == 1) {
 			Tank_GunAutoReuse = Tank_GunGetAutoReuse(Tank_GunID)
 			AudioPlaySound(Tank_GunGetReloadSound(Tank_GunID))
+			Tank_GunAnimationKnockback = 0
 		} else {
 			Tank_GunAutoReuse = Tank_GunGetAutoReuse(Tank_GunID2)
 			AudioPlaySound(Tank_GunGetReloadSound(Tank_GunID2))
+			Tank_GunAnimationKnockback = 0
 		}
 	}
 }

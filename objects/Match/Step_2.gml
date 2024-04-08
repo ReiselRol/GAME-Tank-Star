@@ -3,18 +3,10 @@ Match_IsShopTime = ( Match_ShopTime > 0)
 if (Match_IsShopTime) Match_ShopTime --
 else if (Match_FirtsPositionSet == false) {
 	Match_FirtsPositionSet = true
-	if (Match_SpikeMatch == true) {
-		var defenderTeam = global.Defenders
-		var zoneToDefend = irandom(2)
-		with (BotTank) {
-			if (Tank_Team = defenderTeam) {
-				Tank_BotZone = 	zoneToDefend
-				Bot_GoToZone()
-			} else Bot_SelectPosition()
-		}
-	} else {
-		with (BotTank) Bot_SelectPosition()	
-	}
+	mp_grid_clear_all(global.MapGrid)
+	mp_grid_add_instances(global.MapGrid, HitboxTile, true)
+	mp_grid_add_instances(global.MapGrid, HitboxTileNoShadows, true)
+	Match_AssignBotPositions()
 } else if (Match_time > 0) {
 	if (instance_exists(Spike)) {
 		if (Spike.Spike_isPlanted == false) Match_time--

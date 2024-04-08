@@ -4,6 +4,6 @@ if (place_meeting(x, y, HitboxTile) == true) {
 	if (Proj_HitboxPenetration <= 0) instance_destroy()
 }else if(place_meeting(x, y, HitboxTileNoShadows) == true) {
 	AudioPlaySound(TrasspasingGlassSound)
-	Proj_HitboxPenetration-= 0.5
+	Proj_HitboxPenetration-= 0.25
 	if (Proj_HitboxPenetration <= 0) instance_destroy()
 }

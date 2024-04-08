@@ -29,6 +29,8 @@ var ScopeChasis = argument[27]
 var ScopePainted = argument[28]
 var ScopeGlow = argument[29]
 var ScopeColor = argument[30]
+var GunX = argument[31]
+var GunY = argument[32]
 
 var paintDamaged = (Tank_HittedTime > 0)
 
@@ -45,20 +47,20 @@ if (Tank_SkinCartPaint != 0) draw_sprite_ext(Tank_SkinCartPainted, image_index, 
 if (Tank_IsGlowActive == true) draw_sprite_ext(Tank_SkinCartGlow, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_Angle, Tank_GlowColor, image_alpha)
 
 if (drawGun == true) {
-	draw_sprite_ext(Tank_SkinCannonPrimary, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, GunPrimaryColor, image_alpha)
-	draw_sprite_ext(Tank_SkinCannonSecondary, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, GunSecondaryColor, image_alpha)
+	draw_sprite_ext(Tank_SkinCannonPrimary, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, GunPrimaryColor, image_alpha)
+	draw_sprite_ext(Tank_SkinCannonSecondary, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, GunSecondaryColor, image_alpha)
 	if (paintDamaged == true) {
-		draw_sprite_ext(Tank_SkinCannonPrimary, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, c_red, Tank_HittedTime)
-		draw_sprite_ext(Tank_SkinCannonSecondary, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, c_red, Tank_HittedTime)
+		draw_sprite_ext(Tank_SkinCannonPrimary, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, c_red, Tank_HittedTime)
+		draw_sprite_ext(Tank_SkinCannonSecondary, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, c_red, Tank_HittedTime)
 	}
-	draw_sprite_ext(Tank_SkinCannonChasis, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, c_white, image_alpha)
-	if (Tank_SkinCannonPaint != 0) draw_sprite_ext(Tank_SkinCannonPainted, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GetPaintColor(Tank_SkinCannonPaint), image_alpha)
-	if (Tank_IsGlowActive == true) draw_sprite_ext(Tank_SkinCannonGlow, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GlowColor, image_alpha)
+	draw_sprite_ext(Tank_SkinCannonChasis, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, c_white, image_alpha)
+	if (Tank_SkinCannonPaint != 0) draw_sprite_ext(Tank_SkinCannonPainted, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GetPaintColor(Tank_SkinCannonPaint), image_alpha)
+	if (Tank_IsGlowActive == true) draw_sprite_ext(Tank_SkinCannonGlow, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GlowColor, image_alpha)
 	if (HaveScoope == true) {
-		draw_sprite_ext(ScopeColor, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, GunSecondaryColor, image_alpha)
-		if (paintDamaged == true) draw_sprite_ext(ScopeColor, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, c_red, Tank_HittedTime)
-		draw_sprite_ext(ScopeChasis, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, c_white, image_alpha)
-		if (Tank_SkinCannonPaint != 0) draw_sprite_ext(ScopePainted, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GetPaintColor(Tank_SkinCannonPaint), image_alpha)
+		draw_sprite_ext(ScopeColor, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, GunSecondaryColor, image_alpha)
+		if (paintDamaged == true) draw_sprite_ext(ScopeColor, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, c_red, Tank_HittedTime)
+		draw_sprite_ext(ScopeChasis, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, c_white, image_alpha)
+		if (Tank_SkinCannonPaint != 0) draw_sprite_ext(ScopePainted, image_index, GunX, GunY, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GetPaintColor(Tank_SkinCannonPaint), image_alpha)
 		//if (Tank_IsGlowActive == true) draw_sprite_ext(ScopeGlow, image_index, X, Y, Tank_Scale, Tank_Scale, Tank_PointingTo, Tank_GlowColor, image_alpha)
 	}
 }

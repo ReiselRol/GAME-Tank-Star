@@ -1,5 +1,5 @@
 if (Match.Match_ShopTime == false) {
-	if (irandom(600 - Agent_Tank.Tank_BotElo / 3) <= 0) Agent_Tank.Tank_EKeyPressed = true
+	if (irandom(600 - Agent_Tank.Tank_BotElo / 5) <= 0) Agent_Tank.Tank_EKeyPressed = true
 	else Agent_Tank.Tank_EKeyPressed = false
 	if (irandom(700 - Agent_Tank.Tank_BotElo / 4) <= 0 && Agent_Tank.Tank_QHability > 0) {
 		if (instance_exists(Agent_Tank.Camera_CameraHitbox)) {

@@ -48,8 +48,13 @@ if (Damager.Damage_Cooldown <= 0) {
 			} else Match_ShowUIKill(id,Damager)
 			if (canPlaySound == true) {
 				if (kills < 5) {
-					var sound = audio_play_sound(TankKill, 2, false)
+					var sound = AudioPlayNormalSound(TankKill)
 					audio_sound_pitch(sound, 1 + 0.15 * (kills - 2))
+				} else {
+					AudioPlayNormalSound(AceSound)
+					if (instance_exists(Match)) {
+						if (Match.Match_finished == false) Match.Match_isAce = true	
+					}
 				}
 			}
 		}

@@ -21,6 +21,7 @@ if (Tank_IsABot == false) {
 	Tank_MovementFromInputs()
 	Tank_UsePhysics()
 }
+if (Tank_DropBombKeyPressed == true) Tank_DropSpike()
 if (Tank_IsDropping == true && Tank_DropCooldown <= 0) Tank_DropGun()
 if (Tank_IsDoingAction == true) Tank_TryPickUpp()
 if (Tank_CanShoot == true) {

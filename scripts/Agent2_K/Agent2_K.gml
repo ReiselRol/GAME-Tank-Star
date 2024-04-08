@@ -4,7 +4,7 @@ if (Agent_Tank.Tank_KKeyPressed == true && Agent_Tank.Tank_KHability == Agent_Ta
 	Agent_EyeSelected = false
 	if (Match.Match_UlimitedHabilities == false) Agent_Tank.Tank_KHability = 0
 	var ag = Agent_Tank
-	audio_play_sound(SpectreUlti, 0, false)
+	AudioPlayNormalSound(SpectreUlti)
 	with (TankDeath) {
 		var eye = instance_create_layer(x, y, "ProjsLayer", SpectreEye)
 		eye.SpectreEye_TankId = ag

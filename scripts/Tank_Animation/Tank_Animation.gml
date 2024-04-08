@@ -14,15 +14,24 @@ if (Tank_IsPointingUpp == true && Tank_IsPointingDown == false) {
 		else Tank_FixAngloTo(360)
 	}
 }
-if (global.LDM == false) {
-	var setTrail = true
-	if (place_meeting(x, y, TankTrail)) setTrail = (instance_nearest(x, y, TankTrail).Trail_TankFrom != id)
-	if (setTrail == true) {
-		var trail = instance_create_layer(x, y, "TankTrailLayer", TankTrail)
-		trail.Trail_TankFrom = id
-		trail.image_xscale = Tank_Scale
-		trail.image_yscale = Tank_Scale
-		trail.image_angle = Tank_Angle
-		trail.image_blend = Tank_TrailColor
+if (Tank_MvSpeed >= Tank_NormalMvSpeed) {
+	if (global.LDM == false) {
+		var setTrail = true
+		if (place_meeting(x, y, TankTrail)) setTrail = (instance_nearest(x, y, TankTrail).Trail_TankFrom != id)
+		if (setTrail == true) {
+			var trail = instance_create_layer(x, y, "TankTrailLayer", TankTrail)
+			trail.Trail_TankFrom = id
+			trail.image_xscale = Tank_Scale
+			trail.image_yscale = Tank_Scale
+			trail.image_angle = Tank_Angle
+			trail.image_blend = Tank_TrailColor
+		}
 	}
+}
+Tank_GunX = x
+Tank_GunY = y
+if (Tank_GunAnimationKnockback > 0) {
+	Tank_GunX -= lengthdir_x(Tank_GunAnimationKnockback, Tank_PointingTo)
+	Tank_GunY -= lengthdir_y(Tank_GunAnimationKnockback, Tank_PointingTo)
+	Tank_GunAnimationKnockback--
 }

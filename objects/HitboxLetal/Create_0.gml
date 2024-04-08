@@ -27,6 +27,8 @@ Tank_SkinCannonPrimary = 0
 Tank_SkinCannonSecondary = 0
 Tank_GunPrimaryColor = 0
 Tank_GunSecondaryColor = 0
+Tank_GunX = 0
+Tank_GunY = 0
 
 Tank_ScopeID = 0
 Tank_SkinScopeChasis = 0
