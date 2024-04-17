@@ -94,6 +94,7 @@ if (Camera_Main == true) {
 		}
 		
 		var lifeColor = (Camera_From.Tank_Health > 50) ? c_lime : c_red
+		if (Camera_From.Tank_Health == Camera_From.Tank_MaxHealth && Camera_From.Tank_Shield > 0) lifeColor = c_aqua
 		draw_sprite_ext(InfoUI, 3, x + LifeUIX, y + cameraHeight * 0.88, -Scale, Scale, 0, lifeColor, 0.45)
 		draw_sprite_ext(InfoUI, 1, x + LifeUIX, y + cameraHeight * 0.88, -Scale, Scale, 0, c_white, 0.6)
 		draw_text_ext_transformed(x +LifeUIX - cameraWIdth * 0.14, y + cameraHeight * 0.9, Camera_From.Tank_Health, 10, 7000, scaleFix, scaleFix, 0)

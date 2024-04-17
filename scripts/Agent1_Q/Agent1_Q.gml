@@ -2,12 +2,10 @@ if (Agent_Tank.Tank_QKeyPressed == true && Agent_Tank.Tank_QHability > 0 && Matc
 	if (Agent_isQActived == true) Agent_isQActived = false
 	else {
 		Agent_isQActived = true
-		Agent_isStormHabilityActived = false
 		Agent_isCActived = false
 	}
 }
 if (Agent_isQActived == true) {
-	Agent_isStormHabilityActived = false
 	Agent_Tank.Tank_CanShoot = false
 	Agent_Tank.Tank_CanScope = false
 	Agent_Tank.Tank_DrawPreShoot = false

@@ -6,7 +6,8 @@
     "children": [
         "383ae70c-ecc6-4a5f-97c2-5c2ec4279bb7",
         "dfbe88b7-5cd3-4d0f-9cdc-34f83e7ffe1a",
-        "51cec81f-e224-40c5-96f2-b38e2ad2d668"
+        "51cec81f-e224-40c5-96f2-b38e2ad2d668",
+        "4c9cde2a-343d-4214-8143-4501dc37d911"
     ],
     "filterType": "GMObject",
     "folderName": "RareParticles",

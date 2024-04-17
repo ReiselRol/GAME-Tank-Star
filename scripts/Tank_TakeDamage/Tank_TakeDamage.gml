@@ -33,6 +33,7 @@ if (Damager.Damage_Cooldown <= 0) {
 			var kills = 0
 			var canPlaySound = false
 			if (instance_exists(Damager.Damage_From)){
+				Damager.Damage_From.Tank_RecentlyKill = true
 				Match_ShowUIKill(id,Damager)
 				Damager.Damage_From.Tank_Money += 200 
 				Damager.Damage_From.Tank_Kills ++

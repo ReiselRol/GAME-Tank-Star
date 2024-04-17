@@ -7,9 +7,10 @@ Agent_Tank = noone
 
 Agent_RunningSpeed = 2
 Agent_TotalElectricityBar = 1
-Agent_DischargeElectricityForce = 0.0025
+Agent_DischargeElectricityForce = 0.003
 Agent_ChargeElectricityForce = Agent_DischargeElectricityForce / 4
 Agent_ElectricityBar = Agent_TotalElectricityBar
+Agent_ElectricDashCost = 0.25
 
 Agent_isQActived = false
 Agent_isCActived = false

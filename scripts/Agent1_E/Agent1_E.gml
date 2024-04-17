@@ -10,8 +10,8 @@ if (Agent_ElectricityBar > 0) {
 		if (Agent_isStormHabilityActived == true) {
 			if (Agent_Tank.Tank_IsScooping == true) {
 				Agent_isStormHabilityActived = false
-				if (Agent_ElectricityBar - Agent_DischargeElectricityForce >= 0.33)	{
-					Agent_ElectricityBar -= 0.33
+				if (Agent_ElectricityBar - Agent_DischargeElectricityForce >= Agent_ElectricDashCost)	{
+					Agent_ElectricityBar -= Agent_ElectricDashCost
 					Agent_DashTime = Agent_MaxDashTime
 					with (Agent_Tank) AudioPlaySound(StormDashing)
 				}

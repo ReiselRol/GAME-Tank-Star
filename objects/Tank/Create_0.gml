@@ -1,7 +1,7 @@
 /// @description Props
 
 // Load up
-var agent = irandom(1) + 1
+var agent = irandom(2) + 1
 var colors = Skin_AgentSetColors(agent)
 if (agent > 0) {
 	var VTank_PrimaryColor = colors[0]
@@ -112,7 +112,7 @@ if (ds_list_size(global.Match_Players) < Match.Match_TotalPlayersOnTeam * 2) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // General Props
-
+Tank_RecentlyKill = false
 Tank_SlowDebuffTime = 0
 Tank_Flashed = false
 Tank_Marked = false
@@ -282,3 +282,5 @@ event_user(0)
 Skin_SetChasisSkin(Tank_AgentID)
 if (Tank_AgentID > 0) Agent_SetAgent(Tank_AgentID)
 Tank_FixWeaponSelection()
+
+Tank_GetAllHabilities()

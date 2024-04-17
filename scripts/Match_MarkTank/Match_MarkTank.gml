@@ -9,7 +9,7 @@ var time = argument[1]
 var isAlreadyMarked = false
 with (MarkedTank) {
 	if (Mark_TankMarked == tankToMark){
-		Mark_TimeMark = time
+		if (Mark_TimeMark < time) Mark_TimeMark = time
 		isAlreadyMarked = true
 		break
 	}

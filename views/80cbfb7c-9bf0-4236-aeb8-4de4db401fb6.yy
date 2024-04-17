@@ -5,7 +5,8 @@
     "name": "80cbfb7c-9bf0-4236-aeb8-4de4db401fb6",
     "children": [
         "da608db4-0e11-465e-8c67-eee215cc3ec2",
-        "e08286c0-2362-45ec-a955-51d86fa9bc64"
+        "e08286c0-2362-45ec-a955-51d86fa9bc64",
+        "d03077a4-d53b-44c3-a908-306472ee37bc"
     ],
     "filterType": "GMSound",
     "folderName": "Agents",

@@ -7,6 +7,11 @@ if (instance_exists(Agent_Tank)) {
 	Agent1_Q()
 	Agent1_C()
 	Agent1_K()
+	if (Agent_Tank.Tank_RecentlyKill == true) {
+		Agent_ElectricityBar += 0.25
+		if (Agent_ElectricityBar > Agent_TotalElectricityBar) Agent_ElectricityBar = Agent_TotalElectricityBar
+		Agent_Tank.Tank_RecentlyKill = false
+	}
 	Agent_Tank.Tank_HabilitiesSelected[0] = Agent_isCActived
 	Agent_Tank.Tank_HabilitiesSelected[1] = Agent_isQActived
 	Agent_Tank.Tank_HabilitiesSelected[2] = Agent_isStormHabilityActived
