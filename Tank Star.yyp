@@ -1471,6 +1471,14 @@
             }
         },
         {
+            "Key": "4eb04ad2-f5ec-45fd-a17b-8be8304af80e",
+            "Value": {
+                "id": "1e53f769-a052-4deb-af19-0a63289e978f",
+                "resourcePath": "objects\\ParasyteCable\\ParasyteCable.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4f4dcb95-1d9c-4c2f-b026-ef8f85f867c8",
             "Value": {
                 "id": "902d2a4c-fdc1-48f4-a5f0-93b795d7731f",
@@ -3487,6 +3495,14 @@
             }
         },
         {
+            "Key": "acf6bdd7-37a3-4e6d-86d0-ddeaa5eb48f8",
+            "Value": {
+                "id": "753b7f29-74ef-4e1f-a3e6-53c6ea0a0583",
+                "resourcePath": "scripts\\Match_MakeDebugGridSurface\\Match_MakeDebugGridSurface.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ad499663-7a61-443d-8c45-e4747148b433",
             "Value": {
                 "id": "fc3ea5bb-729a-4428-a91e-0a7256218972",
@@ -4455,6 +4471,14 @@
             }
         },
         {
+            "Key": "dea54011-fa4e-4a22-a7e2-ac881102ca93",
+            "Value": {
+                "id": "5e063303-9be2-40b5-9ee2-e2c67d380b11",
+                "resourcePath": "scripts\\Agent3_Q\\Agent3_Q.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "dfbe88b7-5cd3-4d0f-9cdc-34f83e7ffe1a",
             "Value": {
                 "id": "de8f9b25-ef96-4107-be70-dcde15cdaf37",
@@ -5200,6 +5224,7 @@
         "92399a01-87bd-4e42-a204-ae1ea644987c",
         "dbe87569-1a44-47e5-a8dc-3a98804c90c2",
         "978273b1-cbaf-4c94-aec8-7e3fc182a272",
+        "acf6bdd7-37a3-4e6d-86d0-ddeaa5eb48f8",
         "a9cde645-2eab-49e1-9b70-27823e5552de",
         "69c5072f-8c75-410c-a478-cc8aba398fd7",
         "fccab63f-8b6f-487c-870a-883ef878cd03",
@@ -5260,6 +5285,7 @@
         "f34cceeb-1092-40ca-aef9-46c3b94e876b",
         "aeb4f395-179f-4805-99a5-3fb4d2e1ca6f",
         "18c6fef0-de99-4bfb-81cc-ad0f077f03e9",
+        "dea54011-fa4e-4a22-a7e2-ac881102ca93",
         "253b34c7-da06-4714-8083-45d12bc0b1f4",
         "13ddba1c-4deb-4371-88e5-2718e5ae4071"
     ],

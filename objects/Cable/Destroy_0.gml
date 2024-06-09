@@ -1,3 +1,5 @@
-/// @description Destroy my other instances
-if (instance_exists(Cable_Laser)) instance_destroy(Cable_Laser)
-if (instance_exists(Cable_Brother)) instance_destroy(Cable_Brother)
+/// @description Inserte aquí la descripción
+// Puede escribir su código en este editor
+if (Cable_Master == true) {
+	if (instance_exists(Cable_Brother))	instance_destroy(Cable_Brother)
+}

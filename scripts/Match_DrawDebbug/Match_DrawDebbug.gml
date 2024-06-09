@@ -1,3 +1,6 @@
+draw_set_alpha(0.25)
+draw_surface(Match_DebugGridSurface, 0, 0)
+draw_set_alpha(1)
 var text = "CPU Frames: " + string(fps) + 
 		   "\nFPS: " + string(fps_real) +
 		   "\nTotal Tanks: " + string(Match_CountTotalTanks())+

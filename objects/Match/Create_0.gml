@@ -18,11 +18,11 @@ Match_MakeGrid()
 Match_TotalMatchs = 5
 Match_FirtsPositionSet = false
 Match_IsShopTime = true
-Match_ShopTime = G_SetTime(12)
-Match_elo = 2000
+Match_ShopTime = G_SetTime(16)
+Match_elo = 1800
 Match_time = G_SetTime(60)
 MatchFinishCooldown = G_SetTime(8)
-Match_PlayerPlay = false
+Match_PlayerPlay = true
 Match_TotalPlayersOnTeam = 5
 Match_winner = -1
 Match_finished = false
@@ -30,5 +30,6 @@ Match_Distance = 750 / Match_TotalPlayersOnTeam
 Match_SpikeMatch = true
 Match_UlimitedHabilities = false
 Match_isAce = false
+Match_DebugGridSurface = Match_MakeDebugGridSurface()
 
 if (Match_SpikeMatch == true) Match_GenerateSpikeMatch(Match_elo)

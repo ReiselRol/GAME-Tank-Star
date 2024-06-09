@@ -15,10 +15,12 @@ if (Tank_GunAmmo > 0 && Tank_WeaponSelected == 1 && Tank_GunID > -1) {
 			Damagable_MakeDamagable(BulletProj, Tank_GunGetDamage(Tank_GunID), id, Tank_GunGetPiercing(Tank_GunID), Tank_GunGetCooldownHitted(Tank_GunID), [true])
 		}
 		if (global.LDM == false) {
-			var bulletSprite = instance_create_layer(x, y, "TankTrailLayer", BulletCase)
+			var bulletSprite = instance_create_layer(x, y, "UpperParticle_Layer", BulletCase)
 			var diferenceDirection = irandom(40)
 			if (irandom(1) == 0) diferenceDirection *= -1
 			bulletSprite.direction = Tank_PointingTo - 90 + diferenceDirection
+			bulletSprite.x += lengthdir_x(10, bulletSprite.direction)
+			bulletSprite.y += lengthdir_y(10, bulletSprite.direction)
 			bulletSprite.sprite_index = Tank_GunGetBulletSprite(Tank_GunID)
 		}
 		AudioPlaySound(Tank_GunGetSHootSound(Tank_GunID))
@@ -40,10 +42,12 @@ if (Tank_GunAmmo > 0 && Tank_WeaponSelected == 1 && Tank_GunID > -1) {
 			Damagable_MakeDamagable(BulletProj, Tank_GunGetDamage(Tank_GunID2), id, Tank_GunGetPiercing(Tank_GunID2), Tank_GunGetCooldownHitted(Tank_GunID2), [true])
 		}
 		if (global.LDM == false) {
-			var bulletSprite = instance_create_layer(x, y, "TankTrailLayer", BulletCase)
+			var bulletSprite = instance_create_layer(x, y, "UpperParticle_Layer", BulletCase)
 			var diferenceDirection = irandom(40)
 			if (irandom(1) == 0) diferenceDirection *= -1
 			bulletSprite.direction = Tank_PointingTo - 90 + diferenceDirection
+			bulletSprite.x += lengthdir_x(10, bulletSprite.direction)
+			bulletSprite.y += lengthdir_y(10, bulletSprite.direction)
 			bulletSprite.sprite_index = Tank_GunGetBulletSprite(Tank_GunID2)
 		}
 		AudioPlaySound(Tank_GunGetSHootSound(Tank_GunID2))

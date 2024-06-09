@@ -13,7 +13,13 @@ if (surface_exists(minimap)) {
 	with (HitboxZoneB) draw_sprite_ext(HitboxZoneBSpriteG, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, alpha)
 	with (HitboxZoneC) draw_sprite_ext(HitboxZoneCSpriteG, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, alpha)
 	with (HitboxTile) {
-		draw_rectangle(x, y, x + image_xscale * square, y + image_yscale * square, false)
+		if (Tile_strenght == Tile_BoxStrength) {
+			draw_set_color(c_orange)
+			draw_rectangle(x, y, x + image_xscale * square, y + image_yscale * square, false)
+			draw_set_color(c_black)
+			draw_rectangle(x, y, x + image_xscale * square, y + image_yscale * square, true)
+		}
+		else draw_rectangle(x, y, x + image_xscale * square, y + image_yscale * square, false)
 	}
 	draw_set_color(c_aqua)
 	with (HitboxTileNoShadows) {

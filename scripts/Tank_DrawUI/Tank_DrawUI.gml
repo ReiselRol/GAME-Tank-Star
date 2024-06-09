@@ -142,6 +142,33 @@ if (Camera_Main == true) {
 			with (SpectreProj) {
 				if (SpectreProj_Team == T) draw_sprite_ext(SpectreProjSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, image_xscale * scaleFix * MapScale * 2.5, image_yscale * scaleFix * MapScale * 2.5, image_angle, c_white, 1)
 			}
+			with (Cable) {
+				if (Cable_Master == true) {
+					if (instance_exists(Cable_TankID)) {
+						if (Cable_TankID.Tank_Team == T) {
+							if (instance_exists(Cable_Brother)) {
+								if (Cable_Brother.Cable_Stopped == true) {
+									var Cx = 0
+									var Cy = 0
+									with (Cable_Brother) {
+										Cx = x
+										Cy = y
+									}
+									draw_set_color(PinColor)
+									draw_set_alpha(0.5)
+									draw_line(ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, ID.x + XMap + Cx * MapScale * scaleFix, ID.y + YMap + Cy * MapScale * scaleFix)
+									draw_set_alpha(1)
+									draw_set_color(c_white)
+								}
+							}
+							draw_sprite_ext(sprite_index, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, 0.3 * scaleFix, 0.3 * scaleFix, image_angle, c_white, 1)
+							if (instance_exists(Cable_Brother)) {
+								with(Cable_Brother) draw_sprite_ext(sprite_index, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, 0.3 * scaleFix, 0.3 * scaleFix, image_angle, c_white, 1)
+							}
+						}
+					}
+				}
+			}
 			with (Tank) {
 				if (Tank_Team == T) {
 					draw_sprite_ext(TankPinSprite, 0, ID.x + XMap + x * MapScale * scaleFix, ID.y + YMap + y * MapScale * scaleFix, PinScale * scaleFix, PinScale * scaleFix, 0, (TID != id) ? PinColor : c_yellow, 1)

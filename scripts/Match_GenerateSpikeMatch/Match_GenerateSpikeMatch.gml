@@ -1,4 +1,6 @@
 var elo = argument[0]
+var rivalElo = elo
+var normalElo = elo
 var nextZone = irandom(2)
 var teamMates = Match_TotalPlayersOnTeam
 var reducer = (Match_PlayerPlay == true) ? 0 : 1
@@ -15,15 +17,15 @@ if (global.Defenders == 0) {
 		if (Match_PlayerPlay == false){
 			if (i > 0) global.ActualID ++
 		} else global.ActualID ++
-		var bot = Make_Bot( HitboxZone2.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone2.y, 1 , elo)
+		var bot = Make_Bot( HitboxZone2.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone2.y, 1 , normalElo)
 	}
 	with (BotTank) {
 		Tank_GlowColor = Bot_GetBotColor()
 		Tank_IsGlowActive = true
 	}
-	for (var i = 1 - reducer; i < teamMates; i++){
+	for (var i = 1 - reducer; i < Match_TotalPlayersOnTeam; i++){
 		global.ActualID ++
-		var bot =  Make_Bot( HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i), HitboxZone1.y, 0 , elo)
+		var bot =  Make_Bot( HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i), HitboxZone1.y, 0 , rivalElo)
 		with (bot) {
 			Tank_Attacker = true
 			if (i == 0) {
@@ -34,6 +36,7 @@ if (global.Defenders == 0) {
 			Tank_GlowColor = Bot_GetBotColor()
 			Tank_IsGlowActive = true
 		}
+		if (i >= teamMates) instance_destroy(bot)
 	}
 } else {
 	if (Match_PlayerPlay == true) { 
@@ -45,7 +48,7 @@ if (global.Defenders == 0) {
 		if (Match_PlayerPlay == false){
 			if (i > 0) global.ActualID ++
 		} else global.ActualID ++
-		var bot = Make_Bot(HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone1.y, 1 , elo)
+		var bot = Make_Bot(HitboxZone1.x - Match_Distance * 2 + Match_Distance * (i - 1), HitboxZone1.y, 1 , normalElo)
 		bot.Tank_Attacker = true
 	}
 	var setted = false
@@ -56,9 +59,9 @@ if (global.Defenders == 0) {
 		Tank_IsGlowActive = true
 		
 	}
-	for (var i = 1 - reducer; i < teamMates; i++) {
+	for (var i = 1 - reducer; i < Match_TotalPlayersOnTeam; i++) {
 		global.ActualID ++
-		var bot = Make_Bot(HitboxZone2.x - Match_Distance * 2 + Match_Distance * (i), HitboxZone2.y, 0 , elo)
+		var bot = Make_Bot(HitboxZone2.x - Match_Distance * 2 + Match_Distance * (i), HitboxZone2.y, 0 , rivalElo)
 		with (bot) {
 			if (i == 0) {
 				Tank_MainCamera = true
@@ -68,5 +71,7 @@ if (global.Defenders == 0) {
 			Tank_GlowColor = Bot_GetBotColor()
 			Tank_IsGlowActive = true
 		}
+		if (i >= teamMates) instance_destroy(bot)
 	}
 }
+instance_destroy(TankDeath)
