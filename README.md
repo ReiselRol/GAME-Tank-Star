@@ -9,10 +9,24 @@
 
 ## Features
 
-- **Multiplayer**: Play with friends in intense, strategic matches.
 - **Weapon Switching**: Choose from a variety of unique weapons.
 - **Dynamic Shadow System**: Manually implemented for a better visual experience.
 - **Game Objectives**: Plant or defend the bomb to win.
+- **AI**: The enemies and allies have IA with scalable inteligence.
+
+## Screenshoots
+
+### Prepare for Combat
+
+![PrepareForCombatImage](./images/Idle.png)
+
+### Fight
+
+![Fight](./images/Combat.png)
+
+### Scalable AI
+
+![AI](./images/IA.png)
 
 ## Installation
 
@@ -27,8 +41,16 @@
 
 - **WASD**: Movement
 - **Left Click**: Shoot
+- **Right Click**: Zoom of your weapon
 - **Mouse Wheel**: Change weapon
 - **4**: Plant/Defuse bomb
+- **Left Alt**: Throw Bomb
+- **F**: Collect nearby weapon
+- **G**: Drop Actual Weapon
+- **Q**: First ability
+- **C**: Second ability
+- **E**: Third abiity
+- **X**: Strongest ability
 
 ## Contributions
 
